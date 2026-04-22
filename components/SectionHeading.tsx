@@ -25,11 +25,11 @@ export function SectionHeading({
         <span className="h-1.5 w-1.5 rounded-full bg-accent-emerald" />
         <span className="uppercase tracking-wider">{kicker}</span>
       </div>
-      <h2 className="mt-4 font-display text-3xl md:text-5xl font-semibold tracking-tight leading-[1.1]">
+      <h2 className="mt-4 font-display text-[1.6rem] sm:text-3xl md:text-5xl font-semibold tracking-tight leading-[1.15] sm:leading-[1.1]">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-white/60 text-base md:text-lg leading-relaxed">
+        <p className="mt-3 sm:mt-4 text-white/60 text-[14.5px] sm:text-base md:text-lg leading-relaxed">
           {subtitle}
         </p>
       )}

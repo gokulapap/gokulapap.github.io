@@ -6,7 +6,7 @@ import '@fontsource-variable/jetbrains-mono';
 import './globals.css';
 import { profile } from '@/lib/data';
 
-const SITE_URL = 'https://gokulapap.github.io';
+const SITE_URL = 'https://gokulap.me';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

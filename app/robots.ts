@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'https://gokulapap.github.io/sitemap.xml',
-    host: 'https://gokulapap.github.io',
+    sitemap: 'https://gokulap.me/sitemap.xml',
+    host: 'https://gokulap.me',
   };
 }

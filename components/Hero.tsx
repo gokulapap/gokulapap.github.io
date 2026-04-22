@@ -17,7 +17,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden pt-40 pb-20 md:pt-52 md:pb-28"
+      className="relative overflow-hidden pt-28 pb-16 sm:pt-36 sm:pb-20 md:pt-52 md:pb-28"
     >
       {/* Ambient gradient wash */}
       <div
@@ -46,7 +46,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.05 }}
-          className="mt-6 font-display text-5xl md:text-7xl lg:text-[80px] font-bold tracking-tight leading-[1.02]"
+          className="mt-5 sm:mt-6 font-display text-[1.85rem] sm:text-[2.5rem] md:text-6xl lg:text-7xl xl:text-[80px] font-bold tracking-tight leading-[1.1] sm:leading-[1.05] md:leading-[1.02]"
         >
           Hi, I&apos;m <span className="gradient-text">Gokul A P</span>.
           <br />
@@ -60,7 +60,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-7 max-w-2xl text-lg md:text-xl text-white/65 leading-relaxed"
+          className="mt-5 sm:mt-7 max-w-2xl text-[15px] sm:text-lg md:text-xl text-white/65 leading-relaxed"
         >
           Software Engineer, DevOps at Moveworks — working on Kubernetes
           deployment automation and resource rightsizing. On the side, I hunt
@@ -81,7 +81,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm"
+          className="mt-6 sm:mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-x-6 sm:gap-y-3 text-[13px] sm:text-sm"
         >
           <span className="inline-flex items-center gap-2 text-white/80">
             <Award className="h-4 w-4 text-accent-cyan" />
@@ -104,7 +104,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.22 }}
-          className="mt-10 flex flex-wrap items-center gap-3"
+          className="mt-8 sm:mt-10 flex flex-wrap items-center gap-2.5 sm:gap-3"
         >
           <a href="#projects" className="btn-primary">
             View my work
