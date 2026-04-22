@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Star,
@@ -26,46 +26,17 @@ const filters: ('All' | Project['tags'][number])[] = [
   'All', 'DevOps', 'Security', 'Platform', 'Automation', 'AI', 'CLI',
 ];
 
-export function Projects() {
+// GitHub stats are fetched at BUILD time by the parent server component
+// and passed in as a prop. This avoids runtime rate-limit issues and
+// guarantees consistent numbers on every page load.
+export function Projects({
+  initialStats = {},
+}: {
+  initialStats?: Record<string, LiveStat>;
+}) {
   const [filter, setFilter] = useState<(typeof filters)[number]>('All');
-  const [live, setLive] = useState<Record<string, LiveStat>>({});
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Hit GitHub's public API directly so the site works on any static host
-    // (Vercel, GitHub Pages, Cloudflare Pages) — no backend needed.
-    // Rate limit is 60 req/hr per IP which is plenty for a portfolio.
-    const repos = projects
-      .map((p) => p.repo)
-      .filter((r): r is string => Boolean(r));
-    if (!repos.length) {
-      setLoading(false);
-      return;
-    }
-    Promise.all(
-      repos.map((repo) =>
-        fetch(`https://api.github.com/repos/${repo}`)
-          .then((r) => (r.ok ? r.json() : null))
-          .then((d) =>
-            d
-              ? ({
-                  repo,
-                  stars: d.stargazers_count ?? 0,
-                  forks: d.forks_count ?? 0,
-                  language: d.language ?? null,
-                } as LiveStat)
-              : null
-          )
-          .catch(() => null)
-      )
-    )
-      .then((results) => {
-        const m: Record<string, LiveStat> = {};
-        for (const r of results) if (r) m[r.repo] = r;
-        setLive(m);
-      })
-      .finally(() => setLoading(false));
-  }, []);
+  const live = initialStats;
+  const loading = false;
 
   const filtered = useMemo(
     () => projects.filter((p) => filter === 'All' ? true : (p.tags as string[]).includes(filter)),

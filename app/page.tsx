@@ -11,8 +11,19 @@ import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 import { GridBackground } from '@/components/GridBackground';
 import { CursorGlow } from '@/components/CursorGlow';
+import { projects } from '@/lib/data';
+import { fetchRepoStats, statsToMap } from '@/lib/github';
 
-export default function Page() {
+// Async Server Component. Runs at build time when `output: 'export'` is set,
+// so GitHub stars / forks get baked into the generated HTML — no client-side
+// rate-limit issues.
+export default async function Page() {
+  const repos = projects
+    .map((p) => p.repo)
+    .filter((r): r is string => Boolean(r));
+  const stats = await fetchRepoStats(repos);
+  const initialStats = statsToMap(stats);
+
   return (
     <>
       <GridBackground />
@@ -23,7 +34,7 @@ export default function Page() {
         <About />
         <Skills />
         <Pipeline />
-        <Projects />
+        <Projects initialStats={initialStats} />
         <Experience />
         <Achievements />
         <TerminalSection />

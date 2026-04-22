@@ -46,7 +46,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.05 }}
-          className="mt-5 sm:mt-6 font-display text-[1.85rem] sm:text-[2.5rem] md:text-7xl lg:text-[80px] font-bold tracking-tight leading-[1.1] sm:leading-[1.05] md:leading-[1.02]"
+          className="mt-5 sm:mt-6 font-display text-[1.85rem] sm:text-[2.5rem] md:text-7xl lg:text-[80px] font-bold tracking-tight leading-[1.22] sm:leading-[1.1] md:leading-[1.02]"
         >
           Hi, I&apos;m <span className="gradient-text">Gokul A P</span>.
           <span className="block mt-2 sm:mt-3 md:mt-4 text-white/90">
