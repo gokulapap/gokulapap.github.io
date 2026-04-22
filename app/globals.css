@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --bg: #05070c;
+  --fg: #e6edf7;
+  --muted: #8a95ad;
+  --emerald: #10b981;
+  --cyan: #22d3ee;
+  --violet: #8b5cf6;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(16, 185, 129, 0.35);
+  color: #fff;
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #05070c; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #10b981, #22d3ee);
+  border-radius: 10px;
+  border: 2px solid #05070c;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #22d3ee, #8b5cf6);
+}
+
+/* Premium glass surface with gradient border */
+.surface {
+  position: relative;
+  background: linear-gradient(180deg, rgba(18, 24, 41, 0.7), rgba(12, 17, 28, 0.7));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+}
+.surface::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(34, 211, 238, 0.28),
+    rgba(139, 92, 246, 0.12) 45%,
+    transparent 75%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Brand gradient */
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #10b981 0%,
+    #22d3ee 40%,
+    #8b5cf6 70%,
+    #10b981 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+  /* Prevent last glyph (e.g. the "P" in "A P") clipping on right edge */
+  padding-right: 0.1em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Buttons */
+.btn-primary {
+  @apply inline-flex items-center gap-2 rounded-md px-5 py-2.5 text-sm font-medium transition-all;
+  background: linear-gradient(135deg, #10b981, #22d3ee);
+  color: #05070c;
+  box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.55);
+}
+.btn-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  @apply inline-flex items-center gap-2 rounded-md px-5 py-2.5 text-sm font-medium transition-all border;
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #e6edf7;
+}
+.btn-ghost:hover {
+  background: rgba(34, 211, 238, 0.08);
+  border-color: rgba(34, 211, 238, 0.45);
+  color: #22d3ee;
+}
+
+.kbd {
+  @apply font-mono text-[11px] px-1.5 py-0.5 rounded border;
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #8a95ad;
+}
+
+.chip {
+  @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-mono;
+  background: rgba(34, 211, 238, 0.07);
+  border: 1px solid rgba(34, 211, 238, 0.22);
+  color: #22d3ee;
+}
+
+.caret::after {
+  content: '▍';
+  display: inline-block;
+  margin-left: 2px;
+  color: #10b981;
+  animation: blink 1.1s step-end infinite;
+}
+
+/* Scoped focus ring — NOT applied to inputs */
+a:focus-visible,
+button:focus-visible,
+[role='button']:focus-visible {
+  outline: 2px solid rgba(34, 211, 238, 0.7);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+input:focus,
+input:focus-visible,
+textarea:focus,
+textarea:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { scrollbar-width: none; }
