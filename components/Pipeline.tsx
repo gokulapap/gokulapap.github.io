@@ -94,32 +94,92 @@ export function Pipeline() {
             </div>
           </div>
 
-          {/* Mobile: vertical */}
-          <div className="mt-8 md:hidden space-y-3">
-            {pipelineStages.map((s, i) => {
-              const Icon = iconMap[s.icon] ?? GitCommit;
-              const isActive = i <= active;
-              return (
-                <div key={s.id}
-                  className={`flex gap-3 items-start rounded-xl border p-3 transition ${
-                    isActive ? 'border-accent-emerald/30 bg-accent-emerald/5' : 'border-white/5 bg-white/[0.02]'
-                  }`}
-                >
-                  <div className={`grid place-items-center h-10 w-10 rounded-lg border shrink-0 ${
-                    isActive ? 'border-accent-emerald/50 text-accent-emerald' : 'border-white/10 text-white/40'
-                  }`}>
-                    <Icon className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <span className="font-display font-semibold text-sm">{s.label}</span>
-                      <span className="font-mono text-[10px] text-accent-cyan">{s.sub}</span>
+          {/* Mobile: vertical with flowing rail — mirrors the desktop
+              horizontal fill, using a vertical progress track on the left
+              with a pulsing head that travels as stages activate. */}
+          <div className="mt-8 md:hidden relative">
+            {/* Track (background line) */}
+            <div className="absolute left-[3px] top-5 bottom-5 w-[2px] rounded-full bg-white/10" />
+
+            {/* Progress fill — grows downward with each stage */}
+            <motion.div
+              className="absolute left-[3px] top-5 w-[2px] rounded-full"
+              style={{
+                background: 'linear-gradient(180deg, #10b981, #22d3ee, #8b5cf6)',
+                boxShadow: '0 0 14px rgba(34, 211, 238, 0.45)',
+              }}
+              animate={{
+                height: `calc(${((active + 1) / pipelineStages.length) * 100}% - 40px)`,
+              }}
+              transition={{ duration: 0.8, ease: 'easeInOut' }}
+            >
+              {/* Pulsing head — the "current position" indicator */}
+              <motion.span
+                className="absolute bottom-[-4px] left-[-3px] h-[8px] w-[8px] rounded-full bg-accent-emerald"
+                style={{
+                  boxShadow: '0 0 12px #10b981, 0 0 24px rgba(34, 211, 238, 0.5)',
+                }}
+                animate={{ scale: [1, 1.35, 1] }}
+                transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
+              />
+            </motion.div>
+
+            {/* Stage cards */}
+            <div className="space-y-3 pl-6">
+              {pipelineStages.map((s, i) => {
+                const Icon = iconMap[s.icon] ?? GitCommit;
+                const isActive = i <= active;
+                const isCurrent = i === active;
+                return (
+                  <motion.div
+                    key={s.id}
+                    animate={
+                      isCurrent
+                        ? { borderColor: 'rgba(16,185,129,0.5)' }
+                        : {}
+                    }
+                    className={`flex gap-3 items-start rounded-xl border p-3 transition-colors ${
+                      isActive
+                        ? 'border-accent-emerald/30 bg-accent-emerald/5'
+                        : 'border-white/5 bg-white/[0.02]'
+                    }`}
+                  >
+                    <motion.div
+                      animate={
+                        isCurrent ? { scale: [1, 1.08, 1] } : { scale: 1 }
+                      }
+                      transition={{
+                        duration: 1.2,
+                        repeat: isCurrent ? Infinity : 0,
+                      }}
+                      className={`grid place-items-center h-10 w-10 rounded-lg border shrink-0 relative ${
+                        isActive
+                          ? 'border-accent-emerald/50 text-accent-emerald'
+                          : 'border-white/10 text-white/40'
+                      }`}
+                    >
+                      <Icon className="h-4 w-4" />
+                      {isCurrent && (
+                        <span className="absolute inset-0 rounded-lg border-2 border-accent-emerald/40 animate-ping" />
+                      )}
+                    </motion.div>
+                    <div>
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="font-display font-semibold text-sm">
+                          {s.label}
+                        </span>
+                        <span className="font-mono text-[10px] text-accent-cyan">
+                          {s.sub}
+                        </span>
+                      </div>
+                      <div className="mt-1 text-[12px] text-white/60">
+                        {s.detail}
+                      </div>
                     </div>
-                    <div className="mt-1 text-[12px] text-white/60">{s.detail}</div>
-                  </div>
-                </div>
-              );
-            })}
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
 
           <motion.div

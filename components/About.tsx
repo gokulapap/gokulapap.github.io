@@ -102,7 +102,7 @@ export function About() {
                 icon={<Boxes className="h-4 w-4" />}
                 accent="emerald"
                 title="DevOps"
-                lines={['Kubernetes · Helm', 'ArgoCD · Argo Workflows', 'Terraform · Atlantis']}
+                lines={['Kubernetes · Docker · Helm', 'ArgoCD · Argo Workflows', 'AWS · Terraform · Atlantis']}
               />
               <DoPanel
                 icon={<ShieldCheck className="h-4 w-4" />}

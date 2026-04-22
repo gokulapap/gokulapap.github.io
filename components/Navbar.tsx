@@ -57,7 +57,7 @@ export function Navbar() {
           scrolled ? 'backdrop-blur-xl bg-ink-950/70 border-b border-white/5' : 'bg-transparent'
         )}
       >
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 md:px-8 py-4">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 md:px-8 py-4 md:py-5">
           <a href="#top" className="group flex items-center gap-3">
             {/* Refined gradient mark — tri-stop gradient with an inner ring */}
             <span className="relative grid place-items-center h-10 w-10 rounded-xl overflow-hidden transition-transform group-hover:scale-[1.04]">
