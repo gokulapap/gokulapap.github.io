@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="relative border-t border-white/5 py-10 mt-10">
       <div className="mx-auto max-w-6xl px-5 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="text-xs text-white/45">
-          Designed & built in Bangalore by {profile.name}.
+          Designed & Built by {profile.name}.
         </div>
 
         <div className="flex items-center gap-2">
