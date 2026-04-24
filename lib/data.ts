@@ -370,50 +370,48 @@ export const achievements: Achievement[] = [
   },
 ];
 
-// The shape of a deploy pipeline I'd set up — six steps, generic enough
-// for any team, specific enough to show I know the shape. No tool-name
-// stuffing; the detail lines carry the tech where it matters.
+// Each stage is one tight line — enough to read in a glance.
 export const pipelineStages = [
   {
     id: 'commit',
     label: 'COMMIT',
     sub: 'review & merge',
-    detail: 'Signed commits, peer review, and CI tests pass before anything merges.',
+    detail: 'Signed commits, peer review, CI green.',
     icon: 'GitCommit',
   },
   {
     id: 'build',
     label: 'BUILD',
     sub: 'reproducible',
-    detail: 'The code becomes a container image — built the same way, every time.',
+    detail: 'A container image, built the same way every time.',
     icon: 'Package',
   },
   {
     id: 'scan',
     label: 'SCAN',
     sub: 'security checks',
-    detail: 'Automated scans for vulnerabilities, leaked secrets, and policy violations.',
+    detail: 'Scans for CVEs, secrets, and policy breaches.',
     icon: 'Scan',
   },
   {
     id: 'sign',
     label: 'SIGN',
     sub: 'verified artifact',
-    detail: 'Only clean, signed artifacts leave the pipeline — the cluster verifies signatures on the way in.',
+    detail: 'Only signed, verified artifacts leave the pipeline.',
     icon: 'FileCheck2',
   },
   {
     id: 'deploy',
     label: 'DEPLOY',
     sub: 'progressive',
-    detail: 'A small slice of traffic sees the change first; once it looks healthy, it rolls out to everyone.',
+    detail: 'Canary to a slice first, then the rest.',
     icon: 'Rocket',
   },
   {
     id: 'observe',
     label: 'OBSERVE',
     sub: 'monitor & alerts',
-    detail: 'Health is tracked against SLOs. If something regresses, the deploy reverses itself automatically.',
+    detail: 'Tracked against SLOs; auto-rollback on regression.',
     icon: 'Activity',
   },
 ];
