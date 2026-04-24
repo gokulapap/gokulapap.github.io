@@ -38,10 +38,10 @@ export function Pipeline() {
           kicker="03 / pipeline"
           title={
             <>
-              How I ship code, <span className="gradient-text">safely</span>.
+              From a commit to <span className="gradient-text">production</span>.
             </>
           }
-          subtitle="Every code change goes through six automated checks before it reaches users. If any step fails, the change stops — it never touches production. Here's what each step does."
+          subtitle="Every change a team ships moves through six steps before it reaches users. If any step fails, the change stops — the bad version never goes live. This is the shape of the pipeline I build."
         />
 
         <div className="mt-14 surface p-6 md:p-10 overflow-hidden">
@@ -58,7 +58,17 @@ export function Pipeline() {
                 }}
                 animate={{ width: `${((active + 1) / pipelineStages.length) * 100}%` }}
                 transition={{ duration: 0.8, ease: 'easeInOut' }}
-              />
+              >
+                {/* Pulsing head at the leading edge of the progress line */}
+                <motion.span
+                  className="absolute right-[-5px] top-[-4px] h-[10px] w-[10px] rounded-full bg-accent-emerald"
+                  style={{
+                    boxShadow: '0 0 14px #10b981, 0 0 28px rgba(34,211,238,0.55)',
+                  }}
+                  animate={{ scale: [1, 1.35, 1] }}
+                  transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
+                />
+              </motion.div>
 
               <div className="relative grid grid-cols-6 gap-2">
                 {pipelineStages.map((s, i) => {

@@ -370,50 +370,50 @@ export const achievements: Achievement[] = [
   },
 ];
 
-// A realistic DevSecOps pipeline — how a commit actually moves to prod.
-// Each stage has: a short sub-label (what runs), and a one-line note of
-// what that step actually does / blocks on.
+// The shape of a deploy pipeline I'd set up — six steps, generic enough
+// for any team, specific enough to show I know the shape. No tool-name
+// stuffing; the detail lines carry the tech where it matters.
 export const pipelineStages = [
   {
     id: 'commit',
     label: 'COMMIT',
-    sub: 'PR + review',
-    detail: 'Signed commits, code review, CI tests pass before merge.',
+    sub: 'review & merge',
+    detail: 'Signed commits, peer review, and CI tests pass before anything merges.',
     icon: 'GitCommit',
   },
   {
     id: 'build',
     label: 'BUILD',
-    sub: 'container + SBOM',
-    detail: 'Reproducible container builds with a software bill of materials.',
+    sub: 'reproducible',
+    detail: 'The code becomes a container image — built the same way, every time.',
     icon: 'Package',
   },
   {
     id: 'scan',
     label: 'SCAN',
-    sub: 'Trivy · Snyk · Kyverno',
-    detail: 'CVE scans, secret detection, IaC policy — critical findings block the pipeline.',
+    sub: 'security checks',
+    detail: 'Automated scans for vulnerabilities, leaked secrets, and policy violations.',
     icon: 'Scan',
   },
   {
     id: 'sign',
     label: 'SIGN',
-    sub: 'Cosign keyless',
-    detail: 'Signatures via GitHub OIDC — no long-lived keys to rotate.',
+    sub: 'verified artifact',
+    detail: 'Only clean, signed artifacts leave the pipeline — the cluster verifies signatures on the way in.',
     icon: 'FileCheck2',
   },
   {
     id: 'deploy',
     label: 'DEPLOY',
-    sub: 'ArgoCD canary',
-    detail: 'GitOps sync to the cluster, progressive canary rollout to production.',
+    sub: 'progressive',
+    detail: 'A small slice of traffic sees the change first; once it looks healthy, it rolls out to everyone.',
     icon: 'Rocket',
   },
   {
     id: 'observe',
     label: 'OBSERVE',
-    sub: 'Prometheus · Grafana',
-    detail: 'SLO tracking with error budgets; auto-rollback on regression.',
+    sub: 'slos & alerts',
+    detail: 'Health is tracked against SLOs. If something regresses, the deploy reverses itself automatically.',
     icon: 'Activity',
   },
 ];

@@ -59,19 +59,25 @@ export function Navbar() {
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 md:px-8 py-4 md:py-5">
           <a href="#top" className="group flex items-center gap-3">
-            {/* Refined gradient mark — tri-stop gradient with an inner ring */}
-            <span className="relative grid place-items-center h-10 w-10 rounded-xl overflow-hidden transition-transform group-hover:scale-[1.04]">
-              <span
-                aria-hidden
-                className="absolute inset-0 bg-gradient-to-br from-accent-emerald via-accent-cyan to-accent-violet"
-              />
-              <span
-                aria-hidden
-                className="absolute inset-0 rounded-xl ring-1 ring-inset ring-white/25"
-              />
-              <span className="relative font-display font-bold text-base text-ink-950 tracking-tight">
-                G
-              </span>
+            {/* Infinity logomark — same mark as the favicon, for brand consistency */}
+            <span className="relative grid place-items-center h-10 w-10 rounded-xl overflow-hidden bg-ink-900 border border-white/10 transition-all duration-300 group-hover:border-accent-emerald/50 group-hover:shadow-[0_0_24px_rgba(16,185,129,0.35)] group-hover:scale-[1.05]">
+              <svg viewBox="0 0 32 32" className="w-[26px] h-[26px]" aria-hidden>
+                <defs>
+                  <linearGradient id="nav-mark" x1="0%" y1="50%" x2="100%" y2="50%">
+                    <stop offset="0%" stopColor="#10b981" />
+                    <stop offset="50%" stopColor="#22d3ee" />
+                    <stop offset="100%" stopColor="#8b5cf6" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M 16 16 C 14 11.5 7 11.5 7 16 C 7 20.5 14 20.5 16 16 C 18 11.5 25 11.5 25 16 C 25 20.5 18 20.5 16 16 Z"
+                  fill="none"
+                  stroke="url(#nav-mark)"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </span>
             <div className="hidden sm:flex flex-col leading-none">
               <span className="font-display text-[15px] font-semibold tracking-tight text-white">
