@@ -412,7 +412,7 @@ export const pipelineStages = [
   {
     id: 'observe',
     label: 'OBSERVE',
-    sub: 'slos & alerts',
+    sub: 'monitor & alerts',
     detail: 'Health is tracked against SLOs. If something regresses, the deploy reverses itself automatically.',
     icon: 'Activity',
   },

@@ -38,10 +38,10 @@ export function Pipeline() {
           kicker="03 / pipeline"
           title={
             <>
-              From a commit to <span className="gradient-text">production</span>.
+              How I ship code, <span className="gradient-text">safely</span>.
             </>
           }
-          subtitle="Every change a team ships moves through six steps before it reaches users. If any step fails, the change stops — the bad version never goes live. This is the shape of the pipeline I build."
+          subtitle="Every code change goes through six automated checks before it reaches users. If any step fails, the change stops — it never touches production. Here's what each step does."
         />
 
         <div className="mt-14 surface p-6 md:p-10 overflow-hidden">
