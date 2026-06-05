@@ -28,7 +28,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 .skip{position:fixed;left:14px;top:-60px;z-index:200;background:var(--ink);color:var(--paper);font-family:var(--f-mono);font-size:13px;padding:9px 14px;border-radius:8px;transition:top .2s}.skip:focus{top:14px}
 .container{width:min(100% - 44px,var(--maxw));margin-inline:auto;position:relative;z-index:2}.mono{font-family:var(--f-mono)}
-.topbar{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,border-color .3s,backdrop-filter .3s;background:rgba(241,237,227,.72);border-bottom:1px solid var(--line-soft);backdrop-filter:saturate(1.15) blur(6px);-webkit-backdrop-filter:saturate(1.15) blur(6px)}
 .topbar.solid{background:rgba(241,237,227,.84);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-color:var(--line)}
 .topbar .container{display:flex;align-items:center;gap:18px;height:64px}
 .wordmark{display:flex;align-items:center;gap:11px}.wordmark .bm{width:30px;height:30px;flex:none;background:var(--ink);border-radius:8px;display:grid;place-items:center;overflow:hidden}.wordmark .glyph{width:19px;height:19px;display:block;background:none;padding:0;border-radius:0}.wordmark .glyph circle,.wordmark .glyph path{stroke:#f4efe4;stroke-width:2;fill:none}.wordmark b{font-family:var(--f-disp);font-weight:700;font-size:16px}.wordmark span{font-family:var(--f-mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:.04em}
