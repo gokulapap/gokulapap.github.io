@@ -31,7 +31,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .topbar{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent;padding-top:env(safe-area-inset-top,0px)}
 .topbar.solid{background:rgba(241,237,227,.84);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-color:var(--line)}
 .topbar .container{display:flex;align-items:center;gap:18px;height:64px}
-.wordmark{display:flex;align-items:center;gap:11px}.wordmark .glyph{width:30px;height:30px;flex:none;background:var(--ink);border-radius:8px;padding:5px}.wordmark .glyph circle,.wordmark .glyph path{stroke:#f4efe4;stroke-width:2;fill:none}.wordmark b{font-family:var(--f-disp);font-weight:700;font-size:16px}.wordmark span{font-family:var(--f-mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:.04em}
+.wordmark{display:flex;align-items:center;gap:11px}.wordmark .bm{width:30px;height:30px;flex:none;background:var(--ink);border-radius:8px;display:grid;place-items:center;overflow:hidden}.wordmark .glyph{width:19px;height:19px;display:block;background:none;padding:0;border-radius:0}.wordmark .glyph circle,.wordmark .glyph path{stroke:#f4efe4;stroke-width:2;fill:none}.wordmark b{font-family:var(--f-disp);font-weight:700;font-size:16px}.wordmark span{font-family:var(--f-mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:.04em}
 .nav{margin-left:auto;display:flex;align-items:center;gap:2px}.nav a{font-family:var(--f-mono);font-size:12px;color:var(--ink-soft);padding:7px 10px;border-radius:7px;transition:.2s;position:relative}
 .nav a:hover{color:var(--ink);background:rgba(30,27,22,.05)}.nav a.active{color:var(--accent)}.nav a.active::before{content:"";position:absolute;left:10px;bottom:3px;width:13px;height:2px;background:var(--accent)}
 .burger{display:none;margin-left:auto;width:42px;height:42px;border:1px solid var(--line);border-radius:9px;align-items:center;justify-content:center}
@@ -1181,7 +1181,7 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
 <body>
 <a class="skip" href="#home">Skip to content</a>
 <header class="topbar" id="topbar"><div class="container">
-  <a class="wordmark" href="#home" aria-label="Gokul A P — home"><svg class="glyph" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#1e1b16" stroke-width="1.5"><circle cx="9" cy="16" r="3"/><circle cx="23" cy="9" r="3"/><circle cx="23" cy="23" r="3"/><path d="M12 16 L20 9 M12 16 L20 23"/></g></svg><span><b>Gokul&nbsp;A&nbsp;P</b><br><span>platform · devops · security</span></span></a>
+  <a class="wordmark" href="#home" aria-label="Gokul A P — home"><span class="bm"><svg class="glyph" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#1e1b16" stroke-width="1.5"><circle cx="9" cy="16" r="3"/><circle cx="23" cy="9" r="3"/><circle cx="23" cy="23" r="3"/><path d="M12 16 L20 9 M12 16 L20 23"/></g></svg></span><span><b>Gokul&nbsp;A&nbsp;P</b><br><span>platform · devops · security</span></span></a>
   <nav class="nav" id="nav" aria-label="Primary">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
