@@ -1129,9 +1129,176 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
 .cx-meta .g{color:var(--green)}
 @media (max-width:900px){#contact .cx-grid{grid-template-columns:1fr;gap:26px}.cx-tree{flex-direction:column;align-items:stretch;gap:0}.cx-conn{width:2px;height:16px;align-self:center;margin:0}.cx-tier{gap:9px}.cx-node{min-width:0}}
 </style>
+<style id="v2-glass">
+/* ════════════════════════════════════════════════════════════════════
+   v2 — glass & matte depth system · 3D hero · pipeline rail · terminal
+   ════════════════════════════════════════════════════════════════════ */
+:root{
+  --glass:rgba(255,253,247,.55);
+  --glass-2:rgba(255,253,247,.42);
+  --glass-brd:rgba(30,27,22,.15);
+  --glass-hi:rgba(255,255,255,.6);
+}
+
+/* ── ambient aurora — soft colour fields the glass refracts ── */
+.bg-aura{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.bg-aura i{position:absolute;border-radius:50%;filter:blur(72px);opacity:.75;will-change:transform}
+.bg-aura i:nth-child(1){width:56vw;height:56vw;left:-14vw;top:-18vw;background:radial-gradient(circle at 35% 35%,rgba(50,108,229,.3),transparent 64%)}
+.bg-aura i:nth-child(2){width:48vw;height:48vw;right:-16vw;top:24vh;background:radial-gradient(circle at 60% 40%,rgba(244,104,0,.2),transparent 64%)}
+.bg-aura i:nth-child(3){width:52vw;height:52vw;left:16vw;bottom:-24vw;background:radial-gradient(circle at 50% 55%,rgba(63,143,91,.22),transparent 64%)}
+@media (prefers-reduced-motion:no-preference){
+  .bg-aura i{animation:aura-drift 26s ease-in-out infinite alternate}
+  .bg-aura i:nth-child(2){animation-duration:34s;animation-delay:-9s}
+  .bg-aura i:nth-child(3){animation-duration:40s;animation-delay:-18s}
+}
+@keyframes aura-drift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(4vw,-3vh,0) scale(1.09)}}
+
+/* ── frosted-glass panel chrome (accent-tinted depth shadows) ── */
+.toolwin,.ps-panel,.ah-panel,.codefig,
+#projects .gr-bar,#projects .gh-cal,#projects .gr-card,
+#skills .kr-banner,#skills .kr-group,#skills .kr-foot,
+#ctf .ctf-repohead,#ctf .ctf-panel,#ctf .ctf-arch,#ctf .ctf-impact,
+#security .sf-panel,.cx-app,.kc-slo{
+  background:var(--glass);
+  -webkit-backdrop-filter:blur(14px) saturate(1.3);
+  backdrop-filter:blur(14px) saturate(1.3);
+  border-color:var(--glass-brd);
+  box-shadow:
+    inset 0 1px 0 var(--glass-hi),
+    inset 0 0 0 .5px rgba(255,255,255,.28),
+    0 26px 52px -30px color-mix(in srgb,var(--c,#1e1b16) 42%,transparent),
+    0 6px 18px -12px rgba(30,27,22,.2);
+}
+/* softer, rounder corners across the chrome */
+.toolwin,.toolwin::after{border-radius:16px}
+.ps-panel,.ah-panel,#security .sf-panel,.cx-app{border-radius:15px}
+#projects .gr-card,#projects .gr-bar{border-radius:13px}
+#projects .gh-cal,.codefig,.kc-slo{border-radius:12px}
+#skills .kr-banner,#skills .kr-group,#skills .kr-foot{border-radius:12px}
+#ctf .ctf-repohead,#ctf .ctf-panel,#ctf .ctf-arch,#ctf .ctf-impact{border-radius:12px}
+/* translucent accent header strips instead of opaque tints */
+.ps-bar,.ah-bar,#skills .kr-ghead,#ctf .ctf-rhbar,#ctf .ctf-phead,#security .sf-bar,.cx-bar{
+  background:color-mix(in srgb,var(--c,#1e1b16) 10%,transparent);
+}
+.tw-bar{background:color-mix(in srgb,var(--ink) 5%,transparent)}
+.gs-foot,.ah-foot,.cx-foot{background:color-mix(in srgb,var(--ink) 4%,transparent)}
+/* inner panels go translucent so depth reads through */
+.gf-body{background:transparent}
+.gs-panel,.gf-ts{background:rgba(255,253,247,.6)}
+#timeline .gg-term{background:transparent}
+#skills .kr-tile{background:rgba(255,253,247,.62)}
+#skills .kr-tile:hover{background:color-mix(in srgb,var(--c) 7%,rgba(255,253,247,.7))}
+#about .mf-tile{background:rgba(255,253,247,.62)}
+.cx-node{background:rgba(255,253,247,.66)}
+#projects .gr-card:hover{background:color-mix(in srgb,var(--c) 6%,var(--glass))}
+#projects .gr-solve{background:rgba(255,253,247,.5)}
+/* glassier topbar */
+.topbar{background:rgba(241,237,227,.5);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4)}
+.topbar.solid{background:rgba(241,237,227,.66)}
+/* hover lift gains a deeper accent shadow */
+#projects .gr-card,#skills .kr-tile,#about .mf-tile,.gs-panel,a.cx-pod{transition:transform .2s var(--ease),border-color .2s var(--ease),background .25s var(--ease),box-shadow .3s var(--ease)}
+#projects .gr-card:hover,.gs-panel:hover{box-shadow:inset 0 1px 0 var(--glass-hi),0 30px 56px -28px color-mix(in srgb,var(--c,#1e1b16) 52%,transparent),0 8px 20px -12px rgba(30,27,22,.25)}
+/* keep entry-reveal transitions intact for gr-card (it re-declares transition when .is-in) */
+#projects.is-in .gr-card{transition:opacity .6s var(--ease),transform .6s var(--ease),border-color .2s var(--ease),background .25s var(--ease),box-shadow .3s var(--ease);transition-delay:calc(var(--i,0)*.07s),calc(var(--i,0)*.07s),0s,0s,0s}
+/* no backdrop blur on small screens (perf) — denser fallback fill */
+@media (max-width:680px){
+  .toolwin,.ps-panel,.ah-panel,.codefig,
+  #projects .gr-bar,#projects .gh-cal,#projects .gr-card,
+  #skills .kr-banner,#skills .kr-group,#skills .kr-foot,
+  #ctf .ctf-repohead,#ctf .ctf-panel,#ctf .ctf-arch,#ctf .ctf-impact,
+  #security .sf-panel,.cx-app,.kc-slo{
+    -webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(255,253,247,.82);
+  }
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .toolwin,.ps-panel,.ah-panel,.codefig,
+  #projects .gr-bar,#projects .gh-cal,#projects .gr-card,
+  #skills .kr-banner,#skills .kr-group,#skills .kr-foot,
+  #ctf .ctf-repohead,#ctf .ctf-panel,#ctf .ctf-arch,#ctf .ctf-impact,
+  #security .sf-panel,.cx-app,.kc-slo{background:rgba(255,253,247,.86)}
+}
+
+/* ── 3D hero canvas — contained to the right column, never under the headline ── */
+#home{position:relative}
+.hero3d{position:absolute;left:38%;right:-6%;top:-4%;bottom:-4%;z-index:1;pointer-events:none;opacity:0;transition:opacity 1.4s var(--ease);
+  -webkit-mask-image:radial-gradient(46% 72% at 28% 47%,#000 32%,transparent 74%);
+  mask-image:radial-gradient(46% 72% at 28% 47%,#000 32%,transparent 74%)}
+.hero3d.on{opacity:1}
+.hero3d canvas{width:100%;height:100%;display:block}
+@media (max-width:900px){.hero3d{display:none}}
+
+/* ── pipeline rail (CI-stage scroll progress) ── */
+.pipe-rail{position:fixed;left:20px;top:50%;transform:translateY(-50%);z-index:40;height:min(48vh,540px);width:14px}
+@media (max-width:1240px){.pipe-rail{display:none}}
+.pipe-track{position:absolute;left:50%;top:0;bottom:0;width:2px;transform:translateX(-50%);background:var(--line-soft);border-radius:2px}
+.pipe-fill{position:absolute;left:0;top:0;width:100%;height:0%;border-radius:2px;background:linear-gradient(180deg,var(--blue),var(--accent));transition:height .14s linear}
+.pipe-dots{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;align-items:center}
+.pipe-dot{position:relative;display:block;width:11px;height:11px;border-radius:50%;border:1.5px solid var(--line);background:var(--paper);transition:background .3s var(--ease),border-color .3s var(--ease),box-shadow .3s var(--ease),transform .2s var(--ease)}
+.pipe-dot:hover{transform:scale(1.25)}
+.pipe-dot.done{background:var(--green);border-color:var(--green)}
+.pipe-dot.active{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.pipe-dot::after{content:attr(data-label);position:absolute;left:22px;top:50%;transform:translateY(-50%) translateX(-4px);white-space:nowrap;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.03em;color:var(--ink-soft);background:rgba(255,253,247,.85);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:6px;padding:3px 9px;opacity:0;pointer-events:none;transition:opacity .2s var(--ease),transform .2s var(--ease)}
+.pipe-dot:hover::after,.pipe-dot:focus-visible::after{opacity:1;transform:translateY(-50%) translateX(0)}
+
+/* ── GitHub heatmap tooltip ── */
+.gh-tip{position:fixed;z-index:90;background:var(--ink);color:var(--paper);font-family:var(--f-mono);font-size:11px;padding:5px 10px;border-radius:6px;pointer-events:none;opacity:0;transform:translate(-50%,calc(-100% - 12px));transition:opacity .12s;white-space:nowrap;box-shadow:0 12px 24px -12px rgba(30,27,22,.5)}
+.gh-tip b{color:#9be9a8}
+#projects .gh-c{cursor:crosshair}
+
+/* ════ EXPERIENCE — ArgoCD app status summary strip ════ */
+.ah-sum{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
+.ah-sum .ah-s{display:flex;flex-direction:column;gap:3px;padding:11px 16px;border-right:1px solid var(--line-soft)}
+.ah-sum .ah-s:last-child{border-right:0}
+.ah-sum .ah-sk{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-faint)}
+.ah-sum .ah-sv{font-family:var(--f-mono);font-size:12.5px;color:var(--ink);font-weight:500}
+.ah-sum .ah-hv{color:#2c6b43}
+.ah-sum .ah-hv .ah-heart{display:inline-block;transform-origin:center;margin-right:2px}
+.ah-panel.is-in .ah-sum .ah-hv .ah-heart{animation:ac-heart 2.8s ease-in-out 1.2s infinite}
+.ah-sum .ah-sy{color:#2c6b43}
+@media (max-width:720px){.ah-sum{grid-template-columns:repeat(2,1fr)}.ah-sum .ah-s:nth-child(2){border-right:0}}
+@media (prefers-reduced-motion:reduce){.ah-panel.is-in .ah-sum .ah-hv .ah-heart{animation:none}}
+
+/* ════ PROJECTS — GitHub repo language bars ════ */
+.gr-langbar{display:flex;height:6px;border-radius:4px;overflow:hidden;gap:2px}
+.gr-langbar i{display:block;height:100%;border-radius:2px}
+
+/* ════ CONTACT — animated sync flow along the resource tree ════ */
+.cx-conn{position:relative;overflow:hidden}
+@media (prefers-reduced-motion:no-preference){
+  .cx-conn::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,var(--c),transparent);transform:translateX(-110%);animation:cx-flow 2.4s linear infinite}
+  @media (max-width:900px){.cx-conn::after{background:linear-gradient(180deg,transparent,var(--c),transparent);animation-name:cx-flow-v}}
+}
+@keyframes cx-flow{to{transform:translateX(110%)}}
+@keyframes cx-flow-v{from{transform:translateY(-110%)}to{transform:translateY(110%)}}
+
+/* ════ SECURITY — slow scanner sweep across the panel ════ */
+#security .sf-panel{position:relative}
+@media (prefers-reduced-motion:no-preference){
+  #security .sf-panel.is-in::before{content:"";position:absolute;left:0;right:0;top:-90px;height:70px;z-index:1;pointer-events:none;
+    background:linear-gradient(to bottom,transparent,color-mix(in srgb,var(--c) 14%,transparent) 55%,transparent);
+    animation:sf-sweepy 7s linear 1.6s infinite}
+}
+@keyframes sf-sweepy{0%{transform:translateY(0)}12%{transform:translateY(28vh)}55%{transform:translateY(110vh)}100%{transform:translateY(110vh)}}
+
+/* ════ cursor sheen on glass cards ════ */
+.sheen{position:relative}
+.sheen::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s var(--ease);
+  background:radial-gradient(170px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.5),transparent 62%)}
+.sheen:hover::after{opacity:.55}
+
+/* ABOUT — applied confirmation hugs the manifest window's bottom-right */
+#about .mf-applied{justify-content:flex-end;text-align:right}
+
+@media (prefers-reduced-motion:reduce){
+  .bg-aura i{animation:none}
+  .hero3d{display:none}
+  .pipe-fill{transition:none}
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#home">Skip to content</a>
+<div class="bg-aura" aria-hidden="true"><i></i><i></i><i></i></div>
 <header class="topbar" id="topbar"><div class="container">
   <a class="wordmark" href="#home" aria-label="Gokul A P — home"><span class="bm"><svg class="glyph" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#1e1b16" stroke-width="1.5"><circle cx="9" cy="16" r="3"/><circle cx="23" cy="9" r="3"/><circle cx="23" cy="23" r="3"/><path d="M12 16 L20 9 M12 16 L20 23"/></g></svg></span><span><b>Gokul&nbsp;A&nbsp;P</b><br><span>devops · security</span></span></a>
   <nav class="nav" id="nav" aria-label="Primary">
@@ -1147,6 +1314,7 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
 </div></header>
 <main>
 <section id="home" data-spy="home" style="--c:#326CE5">
+  <div class="hero3d" id="hero3d" aria-hidden="true"></div>
   <div class="container">
     <div class="ps-wrap reveal">
       <!-- LEFT -->
@@ -1206,7 +1374,7 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
         </div>
 
         <div class="ps-cta">
-          <a class="btn btn-fill" href="#work">View work
+          <a class="btn btn-fill" href="#projects">View work
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <a class="btn btn-line" data-link="resume" href="#" target="_blank" rel="noopener">Resume
@@ -1714,6 +1882,13 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
           <span><i class="ah-d ah-ok"></i>Synced · Healthy</span>
           <span><i class="ah-d ah-cur"></i>current</span>
         </span>
+      </div>
+
+      <div class="ah-sum" aria-label="Application status summary">
+        <div class="ah-s"><span class="ah-sk">app health</span><span class="ah-sv ah-hv"><span class="ah-heart" aria-hidden="true">&#9829;</span> Healthy</span></div>
+        <div class="ah-s"><span class="ah-sk">sync status</span><span class="ah-sv ah-sy">&#10003; Synced to HEAD</span></div>
+        <div class="ah-s"><span class="ah-sk">last sync</span><span class="ah-sv">Succeeded &middot; auto-sync</span></div>
+        <div class="ah-s"><span class="ah-sk">history</span><span class="ah-sv">4 releases &middot; progressive</span></div>
       </div>
 
       <div class="ah-list reveal">
@@ -2691,5 +2866,230 @@ $$("section[data-spy]").forEach(function(s){new IntersectionObserver(function(es
 })();
 </script>
 <script>(function(){var plot=document.getElementById("gfPlot");if(!plot)return;var cross=document.getElementById("gfCross"),dot=document.getElementById("gfDot"),tip=document.getElementById("gfTip");var years=["2019","2020","2021","2022","2023","2024","2025"],vals=[8,22,41,63,82,97,108],xr=[0,.166,.333,.5,.666,.833,1],ys=[188,167,138,105,77,54,38];function move(e){var r=plot.getBoundingClientRect(),cx=((e.touches?e.touches[0].clientX:e.clientX)-r.left)/r.width;cx=cx<0?0:cx>1?1:cx;var i=0,best=9;for(var k=0;k<xr.length;k++){var d=Math.abs(xr[k]-cx);if(d<best){best=d;i=k}}var px=xr[i]*r.width,py=ys[i]/200*r.height;cross.style.left=px+"px";dot.style.left=px+"px";dot.style.top=py+"px";tip.style.left=px+"px";tip.style.top=py+"px";tip.innerHTML="<span class='d'>"+years[i]+"</span> &nbsp;<b>"+vals[i]+"</b> findings"}plot.addEventListener("mousemove",move);plot.addEventListener("touchmove",function(e){move(e)},{passive:true});})();</script>
+<script>
+/* ════ v2 — pipeline rail · card tilt · heatmap tooltip · 3D hero ════ */
+(function(){
+"use strict";
+var REDUCE=window.matchMedia&&window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+
+/* ── pipeline rail: every section is a CI stage ── */
+(function(){
+  var secs=[].slice.call(document.querySelectorAll("section[data-spy]"));
+  if(secs.length<2)return;
+  var rail=document.createElement("nav");
+  rail.className="pipe-rail";rail.setAttribute("aria-label","Page pipeline");
+  var track=document.createElement("span");track.className="pipe-track";
+  var fill=document.createElement("span");fill.className="pipe-fill";
+  track.appendChild(fill);rail.appendChild(track);
+  var dots=document.createElement("span");dots.className="pipe-dots";
+  var dotEls=secs.map(function(s,i){
+    var d=document.createElement("a");
+    d.className="pipe-dot";d.href="#"+s.id;
+    var h=s.querySelector("h2");
+    var name=h?h.textContent.trim().toLowerCase():s.id;
+    d.setAttribute("data-label","stage "+(i<10?"0":"")+i+" · "+name);
+    d.setAttribute("aria-label",name);
+    dots.appendChild(d);return d;
+  });
+  rail.appendChild(dots);document.body.appendChild(rail);
+  var ticking=false;
+  function update(){
+    ticking=false;
+    var doc=document.documentElement;
+    var max=doc.scrollHeight-window.innerHeight;
+    fill.style.height=(max>0?Math.min(100,Math.max(0,(scrollY/max)*100)):0)+"%";
+    var mid=scrollY+window.innerHeight*.45,active=0;
+    secs.forEach(function(s,i){if(s.offsetTop<=mid)active=i;});
+    dotEls.forEach(function(d,i){
+      d.classList.toggle("done",i<active);
+      d.classList.toggle("active",i===active);
+    });
+  }
+  addEventListener("scroll",function(){if(!ticking){ticking=true;requestAnimationFrame(update);}},{passive:true});
+  addEventListener("resize",update);
+  update();
+})();
+
+/* ── 3D tilt on cards (hover-capable, motion-ok devices only) ── */
+(function(){
+  if(REDUCE)return;
+  if(!(window.matchMedia&&matchMedia("(hover:hover) and (pointer:fine)").matches))return;
+  var sel="#projects .gr-card,.gs-panel,#skills .kr-tile,#about .mf-tile,.cx-node,#ctf .ctf-feat,.fig-portrait .fig-frame";
+  [].slice.call(document.querySelectorAll(sel)).forEach(function(el){
+    el.classList.add("sheen");
+    var raf=null;
+    function onMove(e){
+      var r=el.getBoundingClientRect();
+      var x=e.clientX-r.left,y=e.clientY-r.top;
+      var px=x/r.width-.5,py=y/r.height-.5;
+      var rx=(-py*6).toFixed(2),ry=(px*8).toFixed(2);
+      el.style.setProperty("--mx",(x/r.width*100).toFixed(1)+"%");
+      el.style.setProperty("--my",(y/r.height*100).toFixed(1)+"%");
+      if(raf)return;
+      raf=requestAnimationFrame(function(){
+        raf=null;
+        el.style.transform="perspective(760px) rotateX("+rx+"deg) rotateY("+ry+"deg) translateY(-2px)";
+      });
+    }
+    el.addEventListener("pointerenter",function(){el.style.transition="transform .16s cubic-bezier(.22,1,.36,1),border-color .2s,background .25s,box-shadow .3s";});
+    el.addEventListener("pointermove",onMove);
+    el.addEventListener("pointerleave",function(){
+      if(raf){cancelAnimationFrame(raf);raf=null;}
+      el.style.transform="";
+      setTimeout(function(){el.style.transition="";},220);
+    });
+  });
+})();
+
+/* ── GitHub language bars on repo cards ── */
+(function(){
+  var fills={"gr-go":["#00ADD8",78],"gr-py":["#3572A5",84],"gr-ts":["#3178c6",72],"gr-ref":["#8a6a1d",90]};
+  [].slice.call(document.querySelectorAll("#projects .gr-card")).forEach(function(c){
+    var dot=c.querySelector(".gr-dot"),foot=c.querySelector(".gr-foot");
+    if(!dot||!foot)return;
+    var key=([].slice.call(dot.classList).filter(function(k){return k!=="gr-dot";})[0])||"gr-go";
+    var f=fills[key]||["#57606a",75];
+    var bar=document.createElement("div");
+    bar.className="gr-langbar";bar.setAttribute("aria-hidden","true");
+    bar.innerHTML='<i style="width:'+f[1]+'%;background:'+f[0]+'"></i>'
+      +'<i style="width:'+(100-f[1]-6)+'%;background:#d9d2c2"></i>'
+      +'<i style="flex:1;background:#c4bca9"></i>';
+    foot.parentNode.insertBefore(bar,foot);
+  });
+})();
+
+/* ── GitHub heatmap tooltip ── */
+(function(){
+  var grid=document.querySelector("#projects .gh-grid");
+  if(!grid)return;
+  var tip=document.createElement("div");tip.className="gh-tip";document.body.appendChild(tip);
+  var cells=[].slice.call(grid.children);
+  grid.addEventListener("mousemove",function(e){
+    var c=e.target.closest(".gh-c");
+    if(!c){tip.style.opacity=0;return;}
+    var l=+c.getAttribute("data-l")||0;
+    var i=cells.indexOf(c);
+    var n=l===0?0:l*3+(i%3)-1;
+    tip.innerHTML=(n<=0?"No contributions":"<b>"+n+" contribution"+(n>1?"s":"")+"</b>")
+      +" <span style='opacity:.65'>· week "+(Math.floor(i/7)+1)+"</span>";
+    tip.style.left=e.clientX+"px";tip.style.top=e.clientY+"px";tip.style.opacity=1;
+  });
+  grid.addEventListener("mouseleave",function(){tip.style.opacity=0;});
+})();
+
+/* ── 3D hero: kubernetes-style node constellation (lazy three.js) ── */
+(function(){
+  if(REDUCE||window.innerWidth<901)return;
+  var host=document.getElementById("hero3d");
+  if(!host)return;
+  var started=false;
+  function boot(){
+    if(started)return;started=true;
+    import("https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js").then(init).catch(function(){});
+  }
+  function idle(){(window.requestIdleCallback||function(f){setTimeout(f,800);})(boot);}
+  if(document.readyState==="complete")idle();else addEventListener("load",idle);
+
+  function init(THREE){
+    var sec=document.getElementById("home");
+    var w=host.clientWidth,h=host.clientHeight;
+    if(!w||!h)return;
+    var renderer;
+    try{renderer=new THREE.WebGLRenderer({alpha:true,antialias:true,powerPreference:"low-power"});}
+    catch(e){return;}
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+    renderer.setSize(w,h);
+    host.appendChild(renderer.domElement);
+
+    var scene=new THREE.Scene();
+    var cam=new THREE.PerspectiveCamera(38,w/h,.1,100);
+    cam.position.set(0,0,16);
+
+    scene.add(new THREE.AmbientLight(0xfff6e8,1.15));
+    var key=new THREE.DirectionalLight(0xffffff,1.25);key.position.set(6,9,10);scene.add(key);
+    var rim=new THREE.DirectionalLight(0x326CE5,.55);rim.position.set(-8,-4,6);scene.add(rim);
+
+    var group=new THREE.Group();
+    group.position.set(-2.45,.75,0);
+    group.scale.setScalar(.52);
+    scene.add(group);
+
+    /* matte-glass core: k8s blue icosahedron + ink wireframe shell */
+    var core=new THREE.Mesh(
+      new THREE.IcosahedronGeometry(2.05,0),
+      new THREE.MeshStandardMaterial({color:0x326CE5,metalness:.3,roughness:.28,transparent:true,opacity:.94,flatShading:true})
+    );
+    var shell=new THREE.LineSegments(
+      new THREE.EdgesGeometry(new THREE.IcosahedronGeometry(3.15,1)),
+      new THREE.LineBasicMaterial({color:0x1e1b16,transparent:true,opacity:.14})
+    );
+    group.add(core,shell);
+
+    /* orbiting service nodes wired to the core */
+    var palette=[0x326CE5,0xEF7B4D,0xF46800,0x3f8f5b,0x7B42BC,0x2496ED,0xbf4527];
+    var nodes=[],links=[];
+    var N=16;
+    for(var i=0;i<N;i++){
+      var rr=4.3+Math.random()*2.9;
+      var th=Math.random()*Math.PI*2,ph=Math.acos(2*Math.random()-1);
+      var pos=new THREE.Vector3(
+        rr*Math.sin(ph)*Math.cos(th),
+        rr*Math.cos(ph)*.72,
+        rr*Math.sin(ph)*Math.sin(th)
+      );
+      var geo=(i%4===0)?new THREE.OctahedronGeometry(.3,0):new THREE.SphereGeometry(.15+Math.random()*.11,14,14);
+      var m=new THREE.Mesh(geo,new THREE.MeshStandardMaterial({
+        color:palette[i%palette.length],metalness:.22,roughness:.38,transparent:true,opacity:.95,flatShading:i%4===0
+      }));
+      m.position.copy(pos);
+      group.add(m);
+      nodes.push({m:m,base:pos.clone(),sp:.45+Math.random()*.85,ph:Math.random()*Math.PI*2});
+      var lg=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,0,0),pos]);
+      var ln=new THREE.Line(lg,new THREE.LineBasicMaterial({color:0x1e1b16,transparent:true,opacity:.12}));
+      group.add(ln);links.push({line:ln,node:i});
+    }
+
+    var tx=0,ty=0,mx=0,my=0;
+    addEventListener("pointermove",function(e){
+      tx=(e.clientX/innerWidth-.5);ty=(e.clientY/innerHeight-.5);
+    },{passive:true});
+
+    var playing=true,shown=false,spin=0;
+    if("IntersectionObserver" in window){
+      new IntersectionObserver(function(es){es.forEach(function(e){playing=e.isIntersecting;});}).observe(sec);
+    }
+    document.addEventListener("visibilitychange",function(){if(document.hidden)playing=false;else{var r=sec.getBoundingClientRect();playing=r.bottom>0&&r.top<innerHeight;}});
+
+    addEventListener("resize",function(){
+      var nw=host.clientWidth,nh=host.clientHeight;
+      if(!nw||!nh)return;
+      cam.aspect=nw/nh;cam.updateProjectionMatrix();renderer.setSize(nw,nh);
+    });
+
+    var clock=new THREE.Clock();
+    (function loop(){
+      requestAnimationFrame(loop);
+      if(!playing)return;
+      var dt=Math.min(clock.getDelta(),.05),t=clock.elapsedTime;
+      spin+=dt*.07;
+      mx+=(tx-mx)*.04;my+=(ty-my)*.04;
+      group.rotation.y=spin+mx*.55;
+      group.rotation.x=my*.3;
+      core.rotation.y+=dt*.18;core.rotation.x+=dt*.07;
+      shell.rotation.y-=dt*.06;
+      for(var i=0;i<nodes.length;i++){
+        var n=nodes[i],k=1+.05*Math.sin(t*n.sp+n.ph);
+        n.m.position.set(n.base.x*k,n.base.y*k,n.base.z*k);
+        var pa=links[i].line.geometry.attributes.position;
+        pa.setXYZ(1,n.m.position.x,n.m.position.y,n.m.position.z);
+        pa.needsUpdate=true;
+      }
+      renderer.render(scene,cam);
+      if(!shown){shown=true;host.classList.add("on");}
+    })();
+  }
+})();
+})();
+</script>
 </body>
 </html>
