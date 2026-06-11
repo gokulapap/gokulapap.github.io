@@ -1220,9 +1220,9 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
 
 /* ── 3D hero canvas — contained to the right column, never under the headline ── */
 #home{position:relative}
-.hero3d{position:absolute;left:38%;right:-6%;top:-4%;bottom:-4%;z-index:1;pointer-events:none;opacity:0;transition:opacity 1.4s var(--ease);
-  -webkit-mask-image:radial-gradient(46% 72% at 28% 47%,#000 32%,transparent 74%);
-  mask-image:radial-gradient(46% 72% at 28% 47%,#000 32%,transparent 74%)}
+.hero3d{position:absolute;left:30%;right:-2%;top:-4%;bottom:-4%;z-index:1;pointer-events:none;opacity:0;transition:opacity 1.4s var(--ease);
+  -webkit-mask-image:radial-gradient(38% 60% at 27% 32%,#000 34%,transparent 72%);
+  mask-image:radial-gradient(38% 60% at 27% 32%,#000 34%,transparent 72%)}
 .hero3d.on{opacity:1}
 .hero3d canvas{width:100%;height:100%;display:block}
 @media (max-width:900px){.hero3d{display:none}}
@@ -3009,45 +3009,57 @@ var REDUCE=window.matchMedia&&window.matchMedia("(prefers-reduced-motion:reduce)
     var key=new THREE.DirectionalLight(0xffffff,1.25);key.position.set(6,9,10);scene.add(key);
     var rim=new THREE.DirectionalLight(0x326CE5,.55);rim.position.set(-8,-4,6);scene.add(rim);
 
+    var BASE_X=-2.95,BASE_Y=2.05;
     var group=new THREE.Group();
-    group.position.set(-2.45,.75,0);
-    group.scale.setScalar(.52);
+    group.position.set(BASE_X,BASE_Y,0);
+    group.scale.setScalar(.48);
     scene.add(group);
 
-    /* matte-glass core: k8s blue icosahedron + ink wireframe shell */
+    /* polished core: faceted k8s-blue icosahedron with crisp white edges + geodesic shell */
     var core=new THREE.Mesh(
-      new THREE.IcosahedronGeometry(2.05,0),
-      new THREE.MeshStandardMaterial({color:0x326CE5,metalness:.3,roughness:.28,transparent:true,opacity:.94,flatShading:true})
+      new THREE.IcosahedronGeometry(1.9,0),
+      new THREE.MeshStandardMaterial({color:0x326CE5,metalness:.35,roughness:.22,emissive:0x16306e,emissiveIntensity:.3,transparent:true,opacity:.97,flatShading:true})
     );
+    core.add(new THREE.LineSegments(
+      new THREE.EdgesGeometry(new THREE.IcosahedronGeometry(1.905,0)),
+      new THREE.LineBasicMaterial({color:0xffffff,transparent:true,opacity:.45})
+    ));
     var shell=new THREE.LineSegments(
-      new THREE.EdgesGeometry(new THREE.IcosahedronGeometry(3.15,1)),
-      new THREE.LineBasicMaterial({color:0x1e1b16,transparent:true,opacity:.14})
+      new THREE.EdgesGeometry(new THREE.IcosahedronGeometry(2.8,1)),
+      new THREE.LineBasicMaterial({color:0x1e1b16,transparent:true,opacity:.11})
     );
     group.add(core,shell);
 
-    /* orbiting service nodes wired to the core */
+    /* three tilted orbital rings — service nodes travel along their orbits */
     var palette=[0x326CE5,0xEF7B4D,0xF46800,0x3f8f5b,0x7B42BC,0x2496ED,0xbf4527];
-    var nodes=[],links=[];
-    var N=16;
-    for(var i=0;i<N;i++){
-      var rr=4.3+Math.random()*2.9;
-      var th=Math.random()*Math.PI*2,ph=Math.acos(2*Math.random()-1);
-      var pos=new THREE.Vector3(
-        rr*Math.sin(ph)*Math.cos(th),
-        rr*Math.cos(ph)*.72,
-        rr*Math.sin(ph)*Math.sin(th)
-      );
-      var geo=(i%4===0)?new THREE.OctahedronGeometry(.3,0):new THREE.SphereGeometry(.15+Math.random()*.11,14,14);
-      var m=new THREE.Mesh(geo,new THREE.MeshStandardMaterial({
-        color:palette[i%palette.length],metalness:.22,roughness:.38,transparent:true,opacity:.95,flatShading:i%4===0
-      }));
-      m.position.copy(pos);
-      group.add(m);
-      nodes.push({m:m,base:pos.clone(),sp:.45+Math.random()*.85,ph:Math.random()*Math.PI*2});
-      var lg=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,0,0),pos]);
-      var ln=new THREE.Line(lg,new THREE.LineBasicMaterial({color:0x1e1b16,transparent:true,opacity:.12}));
-      group.add(ln);links.push({line:ln,node:i});
-    }
+    var ringDefs=[
+      {r:4.0,tilt:[.52,.18,0],n:5,speed:.17},
+      {r:5.2,tilt:[-.42,.65,.2],n:6,speed:-.12},
+      {r:6.4,tilt:[.95,-.5,-.15],n:5,speed:.09}
+    ];
+    var orbits=[],ci=0;
+    ringDefs.forEach(function(def){
+      var ring=new THREE.Group();
+      ring.rotation.set(def.tilt[0],def.tilt[1],def.tilt[2]);
+      group.add(ring);
+      var pts=[];
+      for(var a=0;a<=128;a++){var ang=a/128*Math.PI*2;pts.push(new THREE.Vector3(Math.cos(ang)*def.r,0,Math.sin(ang)*def.r));}
+      ring.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),
+        new THREE.LineBasicMaterial({color:0x1e1b16,transparent:true,opacity:.16})));
+      for(var j=0;j<def.n;j++){
+        var col=palette[ci%palette.length];ci++;
+        var isOct=ci%4===0;
+        var m=new THREE.Mesh(
+          isOct?new THREE.OctahedronGeometry(.3,0):new THREE.SphereGeometry(.17,18,18),
+          new THREE.MeshStandardMaterial({color:col,metalness:.3,roughness:.25,emissive:col,emissiveIntensity:.14,flatShading:isOct})
+        );
+        ring.add(m);
+        var lg=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,0,0),new THREE.Vector3(def.r,0,0)]);
+        var ln=new THREE.Line(lg,new THREE.LineBasicMaterial({color:0x1e1b16,transparent:true,opacity:.1}));
+        ring.add(ln);
+        orbits.push({m:m,ln:ln,r:def.r,a:j/def.n*Math.PI*2,speed:def.speed,wob:Math.random()*Math.PI*2});
+      }
+    });
 
     var tx=0,ty=0,mx=0,my=0;
     addEventListener("pointermove",function(e){
@@ -3075,13 +3087,16 @@ var REDUCE=window.matchMedia&&window.matchMedia("(prefers-reduced-motion:reduce)
       mx+=(tx-mx)*.04;my+=(ty-my)*.04;
       group.rotation.y=spin+mx*.55;
       group.rotation.x=my*.3;
+      group.position.y=BASE_Y+Math.sin(t*.45)*.14;
       core.rotation.y+=dt*.18;core.rotation.x+=dt*.07;
       shell.rotation.y-=dt*.06;
-      for(var i=0;i<nodes.length;i++){
-        var n=nodes[i],k=1+.05*Math.sin(t*n.sp+n.ph);
-        n.m.position.set(n.base.x*k,n.base.y*k,n.base.z*k);
-        var pa=links[i].line.geometry.attributes.position;
-        pa.setXYZ(1,n.m.position.x,n.m.position.y,n.m.position.z);
+      for(var i=0;i<orbits.length;i++){
+        var o=orbits[i];
+        o.a+=dt*o.speed;
+        o.m.position.set(Math.cos(o.a)*o.r,Math.sin(t*.7+o.wob)*.12,Math.sin(o.a)*o.r);
+        o.m.rotation.y+=dt*.5;
+        var pa=o.ln.geometry.attributes.position;
+        pa.setXYZ(1,o.m.position.x,o.m.position.y,o.m.position.z);
         pa.needsUpdate=true;
       }
       renderer.render(scene,cam);
