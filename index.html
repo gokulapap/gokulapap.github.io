@@ -13,9 +13,9 @@
 <meta property="og:type" content="website" /><meta property="og:url" content="https://gokulap.me/" /><meta property="og:site_name" content="Gokul A P" /><meta property="og:locale" content="en_US" />
 <meta property="og:title" content="Gokul A P — DevOps &amp; Security Engineer" />
 <meta property="og:description" content="I build platforms that ship safely. Senior DevOps Engineer @ Moveworks · Kubernetes · DevSecOps · Google Hall of Fame · creator of DevOps CTF." />
-<meta property="og:image" content="https://gokulap.me/og.png" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" /><meta property="og:image:alt" content="Gokul A P — DevOps &amp; Security Engineer" />
+<meta property="og:image" content="https://gokulap.me/og-portfolio.png" /><meta property="og:image:width" content="1731" /><meta property="og:image:height" content="909" /><meta property="og:image:alt" content="Gokul A P — DevOps &amp; Security Engineer" />
 <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="Gokul A P — DevOps &amp; Security Engineer" /><meta name="twitter:creator" content="@CodingGokul" />
-<meta name="twitter:description" content="I build platforms that ship safely. Senior DevOps Engineer @ Moveworks · Kubernetes · DevSecOps · Google Hall of Fame · creator of DevOps CTF." /><meta name="twitter:image" content="https://gokulap.me/og.png" />
+<meta name="twitter:description" content="I build platforms that ship safely. Senior DevOps Engineer @ Moveworks · Kubernetes · DevSecOps · Google Hall of Fame · creator of DevOps CTF." /><meta name="twitter:image" content="https://gokulap.me/og-portfolio.png" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23f1ede3'/%3E%3Cg fill='none' stroke='%231e1b16' stroke-width='1.5'%3E%3Ccircle cx='9' cy='16' r='3'/%3E%3Ccircle cx='23' cy='9' r='3'/%3E%3Ccircle cx='23' cy='23' r='3'/%3E%3Cpath d='M12 16 L20 9 M12 16 L20 23'/%3E%3C/g%3E%3C/svg%3E" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -100,7 +100,9 @@ footer{border-top:1px solid var(--line);padding:30px 0 40px;position:relative;z-
 .ps-eyebrow::before{content:"";width:26px;height:1px;background:var(--c);flex:none}
 .ps-eyebrow .ps-k8s{width:19px;height:19px;flex:none}
 .ps-name{font-family:var(--f-disp);font-weight:800;font-size:clamp(44px,8vw,88px);line-height:.95;letter-spacing:-.03em;margin:0;color:var(--ink)}
-.ps-stmt{font-family:var(--f-disp);font-weight:600;font-size:clamp(20px,2.5vw,27px);line-height:1.28;margin:20px 0 26px;max-width:19ch;color:var(--ink)}
+.ps-intro{font-size:17px;line-height:1.65;color:var(--ink-soft);margin:20px 0 0;max-width:52ch}
+.ps-intro strong{color:var(--ink);font-weight:600}
+.ps-stmt{font-family:var(--f-disp);font-weight:600;font-size:clamp(20px,2.1vw,26px);line-height:1.35;margin:12px 0 24px;color:var(--ink)}
 
 /* status overview panel — GitHub repo header lockup feel */
 .ps-panel{border:1px solid var(--line);border-top:2px solid var(--c);background:var(--paper-2);border-radius:11px;overflow:hidden}
@@ -155,9 +157,12 @@ footer{border-top:1px solid var(--line);padding:30px 0 40px;position:relative;z-
   .ps-row .ps-rk{min-width:92px}
 }
 @media(max-width:420px){
-  .ps-row{flex-wrap:wrap;gap:6px 12px;padding:11px 14px}
+  .ps-row{display:grid;grid-template-columns:82px minmax(0,1fr);align-items:start;gap:12px;padding:12px 14px}
   .ps-bar{padding:11px 14px}
-  .ps-row .ps-rk{min-width:0;width:100%}
+  .ps-row .ps-rk{min-width:0;width:auto;padding-top:3px;font-size:10px}
+  .ps-row .ps-rv{display:block;font-size:14px}
+  .ps-row .ps-rv>svg{display:inline-block;vertical-align:-2px;margin-right:6px}
+  .ps-row .ps-dot{display:inline-block;margin-right:6px}
   .ps-cta{gap:11px}
   .ps-cta .btn{flex:1 1 auto;justify-content:center}
 }
@@ -824,7 +829,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 40px;position:relative;z-
 #security .sf-row{display:grid;grid-template-columns:42px 1fr auto;gap:20px;align-items:start;padding:20px 18px;border-bottom:1px solid var(--line);position:relative}
 #security .sf-row:last-child{border-bottom:0}
 #security .sf-row .sf-n{font-family:var(--f-mono);font-size:12px;color:var(--ink-faint);padding-top:3px}
-#security .sf-row h4{font-family:var(--f-disp);font-weight:700;font-size:17.5px;margin:0 0 4px;letter-spacing:-.01em;line-height:1.2;color:var(--ink)}
+#security .sf-row h3{font-family:var(--f-disp);font-weight:700;font-size:17.5px;margin:0 0 4px;letter-spacing:-.01em;line-height:1.2;color:var(--ink)}
 #security .sf-row p{color:var(--ink-soft);font-size:14px;margin:0;max-width:60ch;line-height:1.55}
 #security .sf-row .sf-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-family:var(--f-mono);font-size:11px;color:var(--ink-soft);margin-top:9px}
 #security .sf-row .sf-meta .sf-mk b{color:var(--ink-faint);font-weight:500;text-transform:uppercase;letter-spacing:.03em}
@@ -1082,7 +1087,7 @@ a.kc-val:focus-visible{outline:2px solid var(--blue-soft);outline-offset:2px;bor
 .ps-name .ps-u svg path{stroke:var(--accent);stroke-width:5;fill:none;stroke-linecap:round;stroke-dasharray:560;stroke-dashoffset:560}
 .reveal.is-in .ps-name .ps-u svg path{transition:stroke-dashoffset 1s var(--ease) .45s;stroke-dashoffset:0}
 @media (prefers-reduced-motion:reduce){.ps-name .ps-u svg path{stroke-dashoffset:0;transition:none}}
-@media (min-width:681px){#home{padding-top:150px}}
+@media (min-width:681px){#home{padding-top:128px}}
 @media (max-width:680px){#home{padding-top:106px}}
 @media (max-width:680px){#ctf .ctf-archsvg{overflow-x:auto;justify-items:start;padding:18px 14px}#ctf .ctf-archsvg svg{min-width:440px;max-width:440px}}
 /* skills: never truncate tile names (Argo Workflows) */
@@ -1131,27 +1136,21 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
 </style>
 <style id="v2-glass">
 /* ════════════════════════════════════════════════════════════════════
-   v2 — glass & matte depth system · 3D hero · pipeline rail · terminal
+   Glass & matte panels · pipeline rail · terminal
    ════════════════════════════════════════════════════════════════════ */
 :root{
-  --glass:rgba(255,253,247,.55);
-  --glass-2:rgba(255,253,247,.42);
+  --glass:rgba(255,253,247,.82);
+  --glass-2:rgba(255,253,247,.7);
   --glass-brd:rgba(30,27,22,.15);
   --glass-hi:rgba(255,255,255,.6);
 }
 
 /* ── ambient aurora — soft colour fields the glass refracts ── */
 .bg-aura{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
-.bg-aura i{position:absolute;border-radius:50%;filter:blur(72px);opacity:.75;will-change:transform}
+.bg-aura i{position:absolute;border-radius:50%;filter:blur(72px);opacity:.28}
 .bg-aura i:nth-child(1){width:56vw;height:56vw;left:-14vw;top:-18vw;background:radial-gradient(circle at 35% 35%,rgba(50,108,229,.3),transparent 64%)}
 .bg-aura i:nth-child(2){width:48vw;height:48vw;right:-16vw;top:24vh;background:radial-gradient(circle at 60% 40%,rgba(244,104,0,.2),transparent 64%)}
 .bg-aura i:nth-child(3){width:52vw;height:52vw;left:16vw;bottom:-24vw;background:radial-gradient(circle at 50% 55%,rgba(63,143,91,.22),transparent 64%)}
-@media (prefers-reduced-motion:no-preference){
-  .bg-aura i{animation:aura-drift 26s ease-in-out infinite alternate}
-  .bg-aura i:nth-child(2){animation-duration:34s;animation-delay:-9s}
-  .bg-aura i:nth-child(3){animation-duration:40s;animation-delay:-18s}
-}
-@keyframes aura-drift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(4vw,-3vh,0) scale(1.09)}}
 
 /* ── frosted-glass panel chrome (accent-tinted depth shadows) ── */
 .toolwin,.ps-panel,.ah-panel,.codefig,
@@ -1166,7 +1165,7 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
   box-shadow:
     inset 0 1px 0 var(--glass-hi),
     inset 0 0 0 .5px rgba(255,255,255,.28),
-    0 26px 52px -30px color-mix(in srgb,var(--c,#1e1b16) 42%,transparent),
+    0 20px 40px -28px rgba(30,27,22,.22),
     0 6px 18px -12px rgba(30,27,22,.2);
 }
 /* softer, rounder corners across the chrome */
@@ -1193,11 +1192,11 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
 #projects .gr-card:hover{background:color-mix(in srgb,var(--c) 6%,var(--glass))}
 #projects .gr-solve{background:rgba(255,253,247,.5)}
 /* glassier topbar */
-.topbar{background:rgba(241,237,227,.5);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4)}
-.topbar.solid{background:rgba(241,237,227,.66)}
+.topbar{background:rgba(241,237,227,.9);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.topbar.solid{background:rgba(241,237,227,.96)}
 /* hover lift gains a deeper accent shadow */
 #projects .gr-card,#skills .kr-tile,#about .mf-tile,.gs-panel,a.cx-pod{transition:transform .2s var(--ease),border-color .2s var(--ease),background .25s var(--ease),box-shadow .3s var(--ease)}
-#projects .gr-card:hover,.gs-panel:hover{box-shadow:inset 0 1px 0 var(--glass-hi),0 30px 56px -28px color-mix(in srgb,var(--c,#1e1b16) 52%,transparent),0 8px 20px -12px rgba(30,27,22,.25)}
+#projects .gr-card:hover,.gs-panel:hover{box-shadow:inset 0 1px 0 var(--glass-hi),0 22px 40px -26px rgba(30,27,22,.24),0 8px 20px -14px rgba(30,27,22,.12)}
 /* keep entry-reveal transitions intact for gr-card (it re-declares transition when .is-in) */
 #projects.is-in .gr-card{transition:opacity .6s var(--ease),transform .6s var(--ease),border-color .2s var(--ease),background .25s var(--ease),box-shadow .3s var(--ease);transition-delay:calc(var(--i,0)*.07s),calc(var(--i,0)*.07s),0s,0s,0s}
 /* no backdrop blur on small screens (perf) — denser fallback fill */
@@ -1217,15 +1216,6 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
   #ctf .ctf-repohead,#ctf .ctf-panel,#ctf .ctf-arch,#ctf .ctf-impact,
   #security .sf-panel,.cx-app,.kc-slo{background:rgba(255,253,247,.86)}
 }
-
-/* ── 3D hero canvas — contained to the right column, never under the headline ── */
-#home{position:relative}
-.hero3d{position:absolute;left:30%;right:-2%;top:-4%;bottom:-4%;z-index:1;pointer-events:none;opacity:0;transition:opacity 1.4s var(--ease);
-  -webkit-mask-image:radial-gradient(38% 60% at 27% 32%,#000 34%,transparent 72%);
-  mask-image:radial-gradient(38% 60% at 27% 32%,#000 34%,transparent 72%)}
-.hero3d.on{opacity:1}
-.hero3d canvas{width:100%;height:100%;display:block}
-@media (max-width:900px){.hero3d{display:none}}
 
 /* ── pipeline rail (CI-stage scroll progress) ── */
 .pipe-rail{position:fixed;left:20px;top:50%;transform:translateY(-50%);z-index:40;height:min(48vh,540px);width:14px}
@@ -1291,16 +1281,81 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
 
 @media (prefers-reduced-motion:reduce){
   .bg-aura i{animation:none}
-  .hero3d{display:none}
   .pipe-fill{transition:none}
 }
 </style>
+<style>
+/* Finishing details for the original blueprint layout. */
+:root{--accent:#ab3a20;--green:#2c7545;--amber:#765814}
+/* Darker text accents keep small labels readable on the warm paper. */
+:is(#about,#skills,#achievements,#experience,#projects,#ctf,#security,#timeline,#contact) .shead .idx{color:color-mix(in srgb,var(--c) 50%,var(--ink))}
+#home .fig-portrait figcaption .dot,#about .fig figcaption .dot,#ctf figcaption .dot{color:var(--ink-soft)}
+#skills .kr-tic .kr-mark{color:var(--ink-soft)}
+.gs-dot,.gs-pill{color:var(--green)}
+#contact .cx-cmd{color:var(--accent)}
+#timeline .gg-row[data-t="release"] .gg-type i{color:#7040b4}
+.mf-stat dd{margin:0;display:flex;align-items:center;gap:8px}
+section{scroll-margin-top:82px}
+body::before{opacity:.32}
+.nav a{min-height:44px;display:flex;align-items:center}
+.nav a.active::before{bottom:6px}
+.ps-wrap{opacity:1;transform:none}
+#home .ps-row{opacity:1;transform:none}
+#home .ps-scan{display:none}
+.ps-name{font-size:clamp(48px,7.6vw,88px);line-height:1.04}
+.ps-left,.ps-right{min-width:0}
+.shead h2{line-height:1.25}
+.lead{line-height:1.7}
+.burger{width:44px;height:44px}
+.fig-portrait .fig-frame{box-shadow:0 18px 40px -30px rgba(30,27,22,.28)}
+footer a[aria-label]{width:44px;height:44px;align-items:center;justify-content:center;border-radius:6px}
+.pipe-dot:focus-visible::after{opacity:1;transform:translateY(-50%)}
+@media (max-width:900px){
+  .nav a{min-height:48px}
+  .nav{max-height:calc(100dvh - 64px);overflow-y:auto}
+}
+@media (max-width:680px){
+  #home{padding-top:102px;padding-bottom:64px}
+  .ps-eyebrow{font-size:10.5px;letter-spacing:.025em;gap:9px;margin-bottom:18px}
+  .ps-eyebrow::before{width:18px}
+  .ps-intro{font-size:15.5px;line-height:1.65;margin-top:16px}
+  .ps-stmt{margin:12px 0 22px}
+  .ps-cta{margin-top:22px}
+  .ps-wrap{gap:36px}
+  .ps-right{width:100%;max-width:330px}
+  .shead{gap:12px}
+  footer .container{gap:12px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important;scroll-behavior:auto!important}
+}
+</style>
+<noscript><style>
+/* Keep the portfolio and its navigation usable without JavaScript. */
+.reveal,.ps-row,#about .mf-prose p,#about .mf-line,#about .mf-applied,
+#skills .kr-tile,.gs-panel,.gs-area,.gs-end,.gf-ts,.gf-aline,.gf-end,
+.ah-pill,.ah-tech .chip,#projects .gh-c,#projects .gr-card,
+#ctf .ctf-node,#ctf .ctf-cat,#ctf .ctf-step,#ctf .ctf-line,
+#security .sf-row,#security .sf-row .sf-right .sev,#security .sf-status,#security .sf-step,
+#timeline .gg-row,.reveal .kc-line,.kc-confirm,.kc-cta .btn{opacity:1;transform:none}
+.ps-name .ps-u svg path,.gs-line,.gf-tline,#timeline .gg-svg path{stroke-dashoffset:0}
+.ah-prog i,#security .sf-ptrack i{transform:scaleX(1)}
+.burger{display:none}
+@media(max-width:900px){
+  .topbar{position:relative}
+  .topbar .container{height:auto;min-height:64px;flex-wrap:wrap;padding-block:12px}
+  .nav{position:static;transform:none;visibility:visible;pointer-events:auto;flex-direction:row;flex-wrap:wrap;padding:0;border:0;box-shadow:none;max-height:none}
+  .nav a{width:auto;padding:8px 10px;font-size:12px}
+  #home{padding-top:40px}
+}
+</style></noscript>
 </head>
 <body>
-<a class="skip" href="#home">Skip to content</a>
+<a class="skip" href="#main-content">Skip to content</a>
 <div class="bg-aura" aria-hidden="true"><i></i><i></i><i></i></div>
 <header class="topbar" id="topbar"><div class="container">
-  <a class="wordmark" href="#home" aria-label="Gokul A P — home"><span class="bm"><svg class="glyph" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#1e1b16" stroke-width="1.5"><circle cx="9" cy="16" r="3"/><circle cx="23" cy="9" r="3"/><circle cx="23" cy="23" r="3"/><path d="M12 16 L20 9 M12 16 L20 23"/></g></svg></span><span><b>Gokul&nbsp;A&nbsp;P</b><br><span>devops · security</span></span></a>
+  <a class="wordmark" href="#home" aria-label="Gokul A P devops · security — home"><span class="bm"><svg class="glyph" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#1e1b16" stroke-width="1.5"><circle cx="9" cy="16" r="3"/><circle cx="23" cy="9" r="3"/><circle cx="23" cy="23" r="3"/><path d="M12 16 L20 9 M12 16 L20 23"/></g></svg></span><span><b>Gokul&nbsp;A&nbsp;P</b><br><span>devops · security</span></span></a>
+  <button class="burger" id="burger" type="button" aria-label="Open navigation" aria-controls="nav" aria-expanded="false"><span></span></button>
   <nav class="nav" id="nav" aria-label="Primary">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
@@ -1310,11 +1365,9 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
       <a href="#security">Security</a>
       <a href="#contact">Contact</a>
   </nav>
-  <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
 </div></header>
-<main>
+<main id="main-content" tabindex="-1">
 <section id="home" data-spy="home" style="--c:#326CE5">
-  <div class="hero3d" id="hero3d" aria-hidden="true"></div>
   <div class="container">
     <div class="ps-wrap reveal">
       <!-- LEFT -->
@@ -1325,6 +1378,7 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
         </p>
 
         <h1 class="ps-name">Gokul <span class="ps-u">A&nbsp;P<svg viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M3 8 C 55 2, 145 2, 197 7"/></svg></span></h1>
+        <p class="ps-intro">Senior Software Engineer (DevOps) at <strong>Moveworks</strong>.<br>Based in <strong>Bengaluru, India</strong>.</p>
         <p class="ps-stmt">I build platforms that ship safely.</p>
 
         <!-- STATUS OVERVIEW PANEL -->
@@ -1377,7 +1431,7 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
           <a class="btn btn-fill" href="#projects">View work
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a class="btn btn-line" data-link="resume" href="#" target="_blank" rel="noopener">Resume
+          <a class="btn btn-line" data-link="resume" href="https://drive.google.com/file/d/1DMduvlCWw_Y9Td9yEoSWNpeWp69JRS0V/view?usp=sharing" target="_blank" rel="noopener">Resume
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
           </a>
         </div>
@@ -1387,7 +1441,7 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
       <div class="ps-right">
         <figure class="fig fig-portrait">
           <div class="fig-frame">
-            <img src="gokul.jpg" alt="Portrait of Gokul A P, Senior Software Engineer, DevOps" width="760" height="950" loading="eager" decoding="async">
+            <img src="gokul.jpg" alt="Portrait of Gokul A P, Senior Software Engineer, DevOps" width="760" height="1140" loading="eager" fetchpriority="high" decoding="async">
             <span class="ps-scan" aria-hidden="true"></span>
             <span class="co tr"></span><span class="co bl"></span>
           </div>
@@ -1460,8 +1514,8 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
             <div class="mf-kv"><dt class="k">org</dt><dd class="v">moveworks</dd></div>
             <div class="mf-kv"><dt class="k">focus</dt><dd class="v">devops&nbsp;&middot;&nbsp;security</dd></div>
             <div class="mf-stat">
-              <span class="mf-dot" aria-hidden="true"></span>
-              <span class="mf-pill">phase: Running</span>
+              <dt class="sr-only">Status</dt>
+              <dd><span class="mf-dot" aria-hidden="true"></span><span class="mf-pill">phase: Running</span></dd>
             </div>
           </dl>
         </div>
@@ -1807,7 +1861,7 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
           <article class="gs-panel" style="--i:1;--tc:#c2691c" role="listitem">
             <div class="gs-head"><svg class="gs-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="#c2691c" d="M12 1.6 3 5.3v6.1c0 5.1 3.6 9.6 9 11 5.4-1.4 9-5.9 9-11V5.3L12 1.6Z" opacity=".14"/><path fill="none" stroke="#c2691c" stroke-width="1.5" d="M12 2.7 4 6v5.4c0 4.6 3.2 8.6 8 9.9 4.8-1.3 8-5.3 8-9.9V6l-8-3.3Z"/><path fill="none" stroke="#c2691c" stroke-width="1.5" stroke-linecap="round" d="M9 11.6l2.1 2.1L15.3 9.3"/></svg><span class="gs-title">Vulnerabilities</span></div>
             <div class="gs-body">
-              <div class="gs-figrow"><span class="gs-num" data-count="100">0</span><span class="gs-suffix">+</span></div>
+              <div class="gs-figrow"><span class="gs-num" data-count="100">100</span><span class="gs-suffix">+</span></div>
               <p class="gs-sub">Security issues responsibly disclosed.</p>
               <span class="gs-unit">vulns &middot; disclosed</span>
               <svg class="gs-spark" viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true"><path class="gs-area" d="M0 30 L16 27 L34 28 L52 20 L70 22 L88 14 L104 12 L120 4 L120 34 L0 34 Z"/><path class="gs-line" style="--len:138" d="M0 30 L16 27 L34 28 L52 20 L70 22 L88 14 L104 12 L120 4"/><circle class="gs-end" cx="120" cy="4" r="2.6"/></svg>
@@ -1817,7 +1871,7 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
           <article class="gs-panel" style="--i:2;--tc:#3f8f5b" role="listitem">
             <div class="gs-head"><svg class="gs-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#3f8f5b" stroke-width="1.5"/><circle cx="12" cy="12" r="9" fill="#3f8f5b" opacity=".1"/><path fill="none" stroke="#3f8f5b" stroke-width="1.5" stroke-linecap="round" d="M14.4 9.1c-.5-.9-1.4-1.4-2.5-1.4-1.6 0-2.7 1-2.7 2.2 0 1.3 1 1.8 2.7 2.2 1.7.4 2.7 1 2.7 2.3 0 1.2-1.1 2.2-2.7 2.2-1.2 0-2.1-.5-2.6-1.4M12 6.2v1.5M12 16.3v1.5"/></svg><span class="gs-title">Bounty Rewards</span></div>
             <div class="gs-body">
-              <div class="gs-figrow"><span class="gs-suffix">&#8377;</span><span class="gs-num" data-count="20">0</span><span class="gs-suffix">L+</span></div>
+              <div class="gs-figrow"><span class="gs-suffix">&#8377;</span><span class="gs-num" data-count="20">20</span><span class="gs-suffix">L+</span></div>
               <p class="gs-sub">Earned across bug-bounty programs.</p>
               <span class="gs-unit">rewards &middot; INR lakh</span>
               <svg class="gs-spark" viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true"><path class="gs-area" d="M0 29 L18 26 L36 27 L54 19 L72 21 L90 13 L106 10 L120 3 L120 34 L0 34 Z"/><path class="gs-line" style="--len:140" d="M0 29 L18 26 L36 27 L54 19 L72 21 L90 13 L106 10 L120 3"/><circle class="gs-end" cx="120" cy="3" r="2.6"/></svg>
@@ -1827,7 +1881,7 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
           <article class="gs-panel" style="--i:3;--tc:#2f5fa6" role="listitem">
             <div class="gs-head"><svg class="gs-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="#2f5fa6" d="M12 2.2A9.8 9.8 0 0 0 8.9 21.3c.49.09.67-.21.67-.47v-1.8c-2.73.59-3.3-1.16-3.3-1.16-.45-1.13-1.1-1.43-1.1-1.43-.9-.61.07-.6.07-.6 1 .07 1.52 1.02 1.52 1.02.88 1.5 2.3 1.07 2.86.82.09-.64.34-1.07.62-1.32-2.18-.25-4.47-1.09-4.47-4.84 0-1.07.38-1.95 1.02-2.63-.1-.25-.45-1.25.1-2.61 0 0 .83-.27 2.72 1A9.5 9.5 0 0 1 12 6.8c.84 0 1.69.11 2.48.34 1.89-1.27 2.72-1 2.72-1 .54 1.36.2 2.36.1 2.61.63.68 1.02 1.56 1.02 2.63 0 3.76-2.3 4.59-4.49 4.83.35.31.67.91.67 1.84v2.73c0 .26.18.57.68.47A9.8 9.8 0 0 0 12 2.2Z"/></svg><span class="gs-title">OSS Projects</span></div>
             <div class="gs-body">
-              <div class="gs-figrow"><span class="gs-num" data-count="60">0</span><span class="gs-suffix">+</span></div>
+              <div class="gs-figrow"><span class="gs-num" data-count="60">60</span><span class="gs-suffix">+</span></div>
               <p class="gs-sub">Tools &amp; repos published, incl. DevOps&nbsp;CTF.</p>
               <span class="gs-unit">repos &middot; shipped</span>
               <svg class="gs-spark" viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true"><path class="gs-area" d="M0 28 L16 25 L32 26 L50 18 L68 20 L86 13 L102 11 L120 6 L120 34 L0 34 Z"/><path class="gs-line" style="--len:137" d="M0 28 L16 25 L32 26 L50 18 L68 20 L86 13 L102 11 L120 6"/><circle class="gs-end" cx="120" cy="6" r="2.6"/></svg>
@@ -2011,12 +2065,12 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
       <div class="gr-bar">
         <div class="gr-bar-l">
           <svg class="gr-octi" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
-          <span class="gr-count" data-count="60" aria-label="60 plus open-source projects">0</span>
+          <span class="gr-count" data-count="60" aria-label="60 plus open-source projects">60</span>
           <span class="gr-count-lbl">+ open-source projects</span>
         </div>
         <div class="gr-bar-r">
           <span class="gr-pill"><span class="gr-stat-dot"></span>public</span>
-          <a class="gr-pill gr-ghlink" data-link="github" href="#" aria-label="View all repositories on GitHub">
+          <a class="gr-pill gr-ghlink" data-link="github" href="https://github.com/gokulapap" aria-label="View all repositories on GitHub">
             <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
             GitHub
           </a>
@@ -2024,8 +2078,8 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
       </div>
 
       <div class="gh-cal reveal" style="--d:1">
-        <div class="gh-caltop"><span><b>1,240</b> contributions in the last year</span><span class="gh-leg" aria-hidden="true">Less <i data-l="0"></i><i data-l="1"></i><i data-l="2"></i><i data-l="3"></i><i data-l="4"></i> More</span></div>
-        <div class="gh-cal-scroll"><div class="gh-grid" role="img" aria-label="GitHub contribution graph over the last year"><i class="gh-c" data-l="0" style="--col:0"></i><i class="gh-c" data-l="0" style="--col:0"></i><i class="gh-c" data-l="1" style="--col:0"></i><i class="gh-c" data-l="0" style="--col:0"></i><i class="gh-c" data-l="1" style="--col:0"></i><i class="gh-c" data-l="0" style="--col:0"></i><i class="gh-c" data-l="0" style="--col:0"></i><i class="gh-c" data-l="1" style="--col:1"></i><i class="gh-c" data-l="0" style="--col:1"></i><i class="gh-c" data-l="0" style="--col:1"></i><i class="gh-c" data-l="0" style="--col:1"></i><i class="gh-c" data-l="0" style="--col:1"></i><i class="gh-c" data-l="0" style="--col:1"></i><i class="gh-c" data-l="2" style="--col:1"></i><i class="gh-c" data-l="0" style="--col:2"></i><i class="gh-c" data-l="0" style="--col:2"></i><i class="gh-c" data-l="1" style="--col:2"></i><i class="gh-c" data-l="3" style="--col:2"></i><i class="gh-c" data-l="1" style="--col:2"></i><i class="gh-c" data-l="0" style="--col:2"></i><i class="gh-c" data-l="4" style="--col:2"></i><i class="gh-c" data-l="0" style="--col:3"></i><i class="gh-c" data-l="2" style="--col:3"></i><i class="gh-c" data-l="0" style="--col:3"></i><i class="gh-c" data-l="0" style="--col:3"></i><i class="gh-c" data-l="0" style="--col:3"></i><i class="gh-c" data-l="0" style="--col:3"></i><i class="gh-c" data-l="2" style="--col:3"></i><i class="gh-c" data-l="0" style="--col:4"></i><i class="gh-c" data-l="1" style="--col:4"></i><i class="gh-c" data-l="1" style="--col:4"></i><i class="gh-c" data-l="0" style="--col:4"></i><i class="gh-c" data-l="1" style="--col:4"></i><i class="gh-c" data-l="0" style="--col:4"></i><i class="gh-c" data-l="0" style="--col:4"></i><i class="gh-c" data-l="0" style="--col:5"></i><i class="gh-c" data-l="1" style="--col:5"></i><i class="gh-c" data-l="0" style="--col:5"></i><i class="gh-c" data-l="0" style="--col:5"></i><i class="gh-c" data-l="1" style="--col:5"></i><i class="gh-c" data-l="0" style="--col:5"></i><i class="gh-c" data-l="0" style="--col:5"></i><i class="gh-c" data-l="2" style="--col:6"></i><i class="gh-c" data-l="1" style="--col:6"></i><i class="gh-c" data-l="0" style="--col:6"></i><i class="gh-c" data-l="1" style="--col:6"></i><i class="gh-c" data-l="1" style="--col:6"></i><i class="gh-c" data-l="3" style="--col:6"></i><i class="gh-c" data-l="2" style="--col:6"></i><i class="gh-c" data-l="0" style="--col:7"></i><i class="gh-c" data-l="4" style="--col:7"></i><i class="gh-c" data-l="0" style="--col:7"></i><i class="gh-c" data-l="0" style="--col:7"></i><i class="gh-c" data-l="2" style="--col:7"></i><i class="gh-c" data-l="0" style="--col:7"></i><i class="gh-c" data-l="1" style="--col:7"></i><i class="gh-c" data-l="0" style="--col:8"></i><i class="gh-c" data-l="1" style="--col:8"></i><i class="gh-c" data-l="2" style="--col:8"></i><i class="gh-c" data-l="1" style="--col:8"></i><i class="gh-c" data-l="3" style="--col:8"></i><i class="gh-c" data-l="0" style="--col:8"></i><i class="gh-c" data-l="2" style="--col:8"></i><i class="gh-c" data-l="1" style="--col:9"></i><i class="gh-c" data-l="1" style="--col:9"></i><i class="gh-c" data-l="1" style="--col:9"></i><i class="gh-c" data-l="2" style="--col:9"></i><i class="gh-c" data-l="3" style="--col:9"></i><i class="gh-c" data-l="1" style="--col:9"></i><i class="gh-c" data-l="1" style="--col:9"></i><i class="gh-c" data-l="0" style="--col:10"></i><i class="gh-c" data-l="2" style="--col:10"></i><i class="gh-c" data-l="1" style="--col:10"></i><i class="gh-c" data-l="4" style="--col:10"></i><i class="gh-c" data-l="2" style="--col:10"></i><i class="gh-c" data-l="0" style="--col:10"></i><i class="gh-c" data-l="0" style="--col:10"></i><i class="gh-c" data-l="1" style="--col:11"></i><i class="gh-c" data-l="0" style="--col:11"></i><i class="gh-c" data-l="1" style="--col:11"></i><i class="gh-c" data-l="0" style="--col:11"></i><i class="gh-c" data-l="0" style="--col:11"></i><i class="gh-c" data-l="0" style="--col:11"></i><i class="gh-c" data-l="2" style="--col:11"></i><i class="gh-c" data-l="0" style="--col:12"></i><i class="gh-c" data-l="0" style="--col:12"></i><i class="gh-c" data-l="0" style="--col:12"></i><i class="gh-c" data-l="3" style="--col:12"></i><i class="gh-c" data-l="0" style="--col:12"></i><i class="gh-c" data-l="1" style="--col:12"></i><i class="gh-c" data-l="1" style="--col:12"></i><i class="gh-c" data-l="3" style="--col:13"></i><i class="gh-c" data-l="2" style="--col:13"></i><i class="gh-c" data-l="3" style="--col:13"></i><i class="gh-c" data-l="0" style="--col:13"></i><i class="gh-c" data-l="0" style="--col:13"></i><i class="gh-c" data-l="0" style="--col:13"></i><i class="gh-c" data-l="3" style="--col:13"></i><i class="gh-c" data-l="4" style="--col:14"></i><i class="gh-c" data-l="0" style="--col:14"></i><i class="gh-c" data-l="0" style="--col:14"></i><i class="gh-c" data-l="0" style="--col:14"></i><i class="gh-c" data-l="0" style="--col:14"></i><i class="gh-c" data-l="1" style="--col:14"></i><i class="gh-c" data-l="1" style="--col:14"></i><i class="gh-c" data-l="0" style="--col:15"></i><i class="gh-c" data-l="0" style="--col:15"></i><i class="gh-c" data-l="1" style="--col:15"></i><i class="gh-c" data-l="0" style="--col:15"></i><i class="gh-c" data-l="1" style="--col:15"></i><i class="gh-c" data-l="4" style="--col:15"></i><i class="gh-c" data-l="2" style="--col:15"></i><i class="gh-c" data-l="1" style="--col:16"></i><i class="gh-c" data-l="1" style="--col:16"></i><i class="gh-c" data-l="2" style="--col:16"></i><i class="gh-c" data-l="0" style="--col:16"></i><i class="gh-c" data-l="3" style="--col:16"></i><i class="gh-c" data-l="2" style="--col:16"></i><i class="gh-c" data-l="3" style="--col:16"></i><i class="gh-c" data-l="2" style="--col:17"></i><i class="gh-c" data-l="0" style="--col:17"></i><i class="gh-c" data-l="1" style="--col:17"></i><i class="gh-c" data-l="0" style="--col:17"></i><i class="gh-c" data-l="2" style="--col:17"></i><i class="gh-c" data-l="0" style="--col:17"></i><i class="gh-c" data-l="0" style="--col:17"></i><i class="gh-c" data-l="0" style="--col:18"></i><i class="gh-c" data-l="0" style="--col:18"></i><i class="gh-c" data-l="0" style="--col:18"></i><i class="gh-c" data-l="0" style="--col:18"></i><i class="gh-c" data-l="0" style="--col:18"></i><i class="gh-c" data-l="0" style="--col:18"></i><i class="gh-c" data-l="0" style="--col:18"></i><i class="gh-c" data-l="0" style="--col:19"></i><i class="gh-c" data-l="0" style="--col:19"></i><i class="gh-c" data-l="3" style="--col:19"></i><i class="gh-c" data-l="1" style="--col:19"></i><i class="gh-c" data-l="0" style="--col:19"></i><i class="gh-c" data-l="0" style="--col:19"></i><i class="gh-c" data-l="0" style="--col:19"></i><i class="gh-c" data-l="0" style="--col:20"></i><i class="gh-c" data-l="0" style="--col:20"></i><i class="gh-c" data-l="3" style="--col:20"></i><i class="gh-c" data-l="4" style="--col:20"></i><i class="gh-c" data-l="1" style="--col:20"></i><i class="gh-c" data-l="1" style="--col:20"></i><i class="gh-c" data-l="0" style="--col:20"></i><i class="gh-c" data-l="0" style="--col:21"></i><i class="gh-c" data-l="0" style="--col:21"></i><i class="gh-c" data-l="0" style="--col:21"></i><i class="gh-c" data-l="3" style="--col:21"></i><i class="gh-c" data-l="0" style="--col:21"></i><i class="gh-c" data-l="0" style="--col:21"></i><i class="gh-c" data-l="4" style="--col:21"></i><i class="gh-c" data-l="1" style="--col:22"></i><i class="gh-c" data-l="0" style="--col:22"></i><i class="gh-c" data-l="1" style="--col:22"></i><i class="gh-c" data-l="0" style="--col:22"></i><i class="gh-c" data-l="1" style="--col:22"></i><i class="gh-c" data-l="4" style="--col:22"></i><i class="gh-c" data-l="3" style="--col:22"></i><i class="gh-c" data-l="2" style="--col:23"></i><i class="gh-c" data-l="0" style="--col:23"></i><i class="gh-c" data-l="1" style="--col:23"></i><i class="gh-c" data-l="0" style="--col:23"></i><i class="gh-c" data-l="2" style="--col:23"></i><i class="gh-c" data-l="1" style="--col:23"></i><i class="gh-c" data-l="2" style="--col:23"></i><i class="gh-c" data-l="0" style="--col:24"></i><i class="gh-c" data-l="0" style="--col:24"></i><i class="gh-c" data-l="3" style="--col:24"></i><i class="gh-c" data-l="4" style="--col:24"></i><i class="gh-c" data-l="3" style="--col:24"></i><i class="gh-c" data-l="3" style="--col:24"></i><i class="gh-c" data-l="3" style="--col:24"></i><i class="gh-c" data-l="2" style="--col:25"></i><i class="gh-c" data-l="0" style="--col:25"></i><i class="gh-c" data-l="1" style="--col:25"></i><i class="gh-c" data-l="1" style="--col:25"></i><i class="gh-c" data-l="0" style="--col:25"></i><i class="gh-c" data-l="0" style="--col:25"></i><i class="gh-c" data-l="0" style="--col:25"></i><i class="gh-c" data-l="0" style="--col:26"></i><i class="gh-c" data-l="2" style="--col:26"></i><i class="gh-c" data-l="4" style="--col:26"></i><i class="gh-c" data-l="1" style="--col:26"></i><i class="gh-c" data-l="4" style="--col:26"></i><i class="gh-c" data-l="4" style="--col:26"></i><i class="gh-c" data-l="4" style="--col:26"></i><i class="gh-c" data-l="1" style="--col:27"></i><i class="gh-c" data-l="0" style="--col:27"></i><i class="gh-c" data-l="0" style="--col:27"></i><i class="gh-c" data-l="0" style="--col:27"></i><i class="gh-c" data-l="0" style="--col:27"></i><i class="gh-c" data-l="2" style="--col:27"></i><i class="gh-c" data-l="3" style="--col:27"></i><i class="gh-c" data-l="3" style="--col:28"></i><i class="gh-c" data-l="1" style="--col:28"></i><i class="gh-c" data-l="2" style="--col:28"></i><i class="gh-c" data-l="3" style="--col:28"></i><i class="gh-c" data-l="0" style="--col:28"></i><i class="gh-c" data-l="2" style="--col:28"></i><i class="gh-c" data-l="4" style="--col:28"></i><i class="gh-c" data-l="3" style="--col:29"></i><i class="gh-c" data-l="2" style="--col:29"></i><i class="gh-c" data-l="1" style="--col:29"></i><i class="gh-c" data-l="0" style="--col:29"></i><i class="gh-c" data-l="3" style="--col:29"></i><i class="gh-c" data-l="1" style="--col:29"></i><i class="gh-c" data-l="3" style="--col:29"></i><i class="gh-c" data-l="4" style="--col:30"></i><i class="gh-c" data-l="1" style="--col:30"></i><i class="gh-c" data-l="1" style="--col:30"></i><i class="gh-c" data-l="4" style="--col:30"></i><i class="gh-c" data-l="2" style="--col:30"></i><i class="gh-c" data-l="0" style="--col:30"></i><i class="gh-c" data-l="0" style="--col:30"></i><i class="gh-c" data-l="0" style="--col:31"></i><i class="gh-c" data-l="4" style="--col:31"></i><i class="gh-c" data-l="3" style="--col:31"></i><i class="gh-c" data-l="0" style="--col:31"></i><i class="gh-c" data-l="3" style="--col:31"></i><i class="gh-c" data-l="4" style="--col:31"></i><i class="gh-c" data-l="2" style="--col:31"></i><i class="gh-c" data-l="1" style="--col:32"></i><i class="gh-c" data-l="2" style="--col:32"></i><i class="gh-c" data-l="0" style="--col:32"></i><i class="gh-c" data-l="0" style="--col:32"></i><i class="gh-c" data-l="4" style="--col:32"></i><i class="gh-c" data-l="2" style="--col:32"></i><i class="gh-c" data-l="1" style="--col:32"></i><i class="gh-c" data-l="4" style="--col:33"></i><i class="gh-c" data-l="1" style="--col:33"></i><i class="gh-c" data-l="3" style="--col:33"></i><i class="gh-c" data-l="3" style="--col:33"></i><i class="gh-c" data-l="0" style="--col:33"></i><i class="gh-c" data-l="0" style="--col:33"></i><i class="gh-c" data-l="0" style="--col:33"></i><i class="gh-c" data-l="0" style="--col:34"></i><i class="gh-c" data-l="2" style="--col:34"></i><i class="gh-c" data-l="0" style="--col:34"></i><i class="gh-c" data-l="1" style="--col:34"></i><i class="gh-c" data-l="0" style="--col:34"></i><i class="gh-c" data-l="4" style="--col:34"></i><i class="gh-c" data-l="1" style="--col:34"></i><i class="gh-c" data-l="1" style="--col:35"></i><i class="gh-c" data-l="2" style="--col:35"></i><i class="gh-c" data-l="4" style="--col:35"></i><i class="gh-c" data-l="1" style="--col:35"></i><i class="gh-c" data-l="4" style="--col:35"></i><i class="gh-c" data-l="1" style="--col:35"></i><i class="gh-c" data-l="2" style="--col:35"></i><i class="gh-c" data-l="2" style="--col:36"></i><i class="gh-c" data-l="0" style="--col:36"></i><i class="gh-c" data-l="1" style="--col:36"></i><i class="gh-c" data-l="0" style="--col:36"></i><i class="gh-c" data-l="0" style="--col:36"></i><i class="gh-c" data-l="3" style="--col:36"></i><i class="gh-c" data-l="0" style="--col:36"></i><i class="gh-c" data-l="1" style="--col:37"></i><i class="gh-c" data-l="3" style="--col:37"></i><i class="gh-c" data-l="2" style="--col:37"></i><i class="gh-c" data-l="1" style="--col:37"></i><i class="gh-c" data-l="2" style="--col:37"></i><i class="gh-c" data-l="2" style="--col:37"></i><i class="gh-c" data-l="3" style="--col:37"></i><i class="gh-c" data-l="0" style="--col:38"></i><i class="gh-c" data-l="2" style="--col:38"></i><i class="gh-c" data-l="0" style="--col:38"></i><i class="gh-c" data-l="1" style="--col:38"></i><i class="gh-c" data-l="3" style="--col:38"></i><i class="gh-c" data-l="2" style="--col:38"></i><i class="gh-c" data-l="2" style="--col:38"></i><i class="gh-c" data-l="3" style="--col:39"></i><i class="gh-c" data-l="4" style="--col:39"></i><i class="gh-c" data-l="1" style="--col:39"></i><i class="gh-c" data-l="2" style="--col:39"></i><i class="gh-c" data-l="2" style="--col:39"></i><i class="gh-c" data-l="2" style="--col:39"></i><i class="gh-c" data-l="2" style="--col:39"></i><i class="gh-c" data-l="1" style="--col:40"></i><i class="gh-c" data-l="2" style="--col:40"></i><i class="gh-c" data-l="1" style="--col:40"></i><i class="gh-c" data-l="4" style="--col:40"></i><i class="gh-c" data-l="2" style="--col:40"></i><i class="gh-c" data-l="4" style="--col:40"></i><i class="gh-c" data-l="4" style="--col:40"></i><i class="gh-c" data-l="1" style="--col:41"></i><i class="gh-c" data-l="2" style="--col:41"></i><i class="gh-c" data-l="4" style="--col:41"></i><i class="gh-c" data-l="3" style="--col:41"></i><i class="gh-c" data-l="0" style="--col:41"></i><i class="gh-c" data-l="0" style="--col:41"></i><i class="gh-c" data-l="1" style="--col:41"></i><i class="gh-c" data-l="0" style="--col:42"></i><i class="gh-c" data-l="1" style="--col:42"></i><i class="gh-c" data-l="0" style="--col:42"></i><i class="gh-c" data-l="2" style="--col:42"></i><i class="gh-c" data-l="3" style="--col:42"></i><i class="gh-c" data-l="4" style="--col:42"></i><i class="gh-c" data-l="0" style="--col:42"></i><i class="gh-c" data-l="3" style="--col:43"></i><i class="gh-c" data-l="2" style="--col:43"></i><i class="gh-c" data-l="0" style="--col:43"></i><i class="gh-c" data-l="4" style="--col:43"></i><i class="gh-c" data-l="4" style="--col:43"></i><i class="gh-c" data-l="0" style="--col:43"></i><i class="gh-c" data-l="4" style="--col:43"></i><i class="gh-c" data-l="1" style="--col:44"></i><i class="gh-c" data-l="2" style="--col:44"></i><i class="gh-c" data-l="4" style="--col:44"></i><i class="gh-c" data-l="3" style="--col:44"></i><i class="gh-c" data-l="0" style="--col:44"></i><i class="gh-c" data-l="1" style="--col:44"></i><i class="gh-c" data-l="2" style="--col:44"></i><i class="gh-c" data-l="1" style="--col:45"></i><i class="gh-c" data-l="0" style="--col:45"></i><i class="gh-c" data-l="1" style="--col:45"></i><i class="gh-c" data-l="3" style="--col:45"></i><i class="gh-c" data-l="0" style="--col:45"></i><i class="gh-c" data-l="2" style="--col:45"></i><i class="gh-c" data-l="1" style="--col:45"></i><i class="gh-c" data-l="0" style="--col:46"></i><i class="gh-c" data-l="1" style="--col:46"></i><i class="gh-c" data-l="2" style="--col:46"></i><i class="gh-c" data-l="2" style="--col:46"></i><i class="gh-c" data-l="0" style="--col:46"></i><i class="gh-c" data-l="4" style="--col:46"></i><i class="gh-c" data-l="3" style="--col:46"></i><i class="gh-c" data-l="4" style="--col:47"></i><i class="gh-c" data-l="0" style="--col:47"></i><i class="gh-c" data-l="1" style="--col:47"></i><i class="gh-c" data-l="0" style="--col:47"></i><i class="gh-c" data-l="3" style="--col:47"></i><i class="gh-c" data-l="1" style="--col:47"></i><i class="gh-c" data-l="0" style="--col:47"></i><i class="gh-c" data-l="1" style="--col:48"></i><i class="gh-c" data-l="4" style="--col:48"></i><i class="gh-c" data-l="3" style="--col:48"></i><i class="gh-c" data-l="1" style="--col:48"></i><i class="gh-c" data-l="0" style="--col:48"></i><i class="gh-c" data-l="4" style="--col:48"></i><i class="gh-c" data-l="2" style="--col:48"></i><i class="gh-c" data-l="3" style="--col:49"></i><i class="gh-c" data-l="0" style="--col:49"></i><i class="gh-c" data-l="0" style="--col:49"></i><i class="gh-c" data-l="3" style="--col:49"></i><i class="gh-c" data-l="1" style="--col:49"></i><i class="gh-c" data-l="0" style="--col:49"></i><i class="gh-c" data-l="4" style="--col:49"></i><i class="gh-c" data-l="2" style="--col:50"></i><i class="gh-c" data-l="3" style="--col:50"></i><i class="gh-c" data-l="0" style="--col:50"></i><i class="gh-c" data-l="4" style="--col:50"></i><i class="gh-c" data-l="0" style="--col:50"></i><i class="gh-c" data-l="4" style="--col:50"></i><i class="gh-c" data-l="2" style="--col:50"></i><i class="gh-c" data-l="1" style="--col:51"></i><i class="gh-c" data-l="2" style="--col:51"></i><i class="gh-c" data-l="4" style="--col:51"></i><i class="gh-c" data-l="1" style="--col:51"></i><i class="gh-c" data-l="0" style="--col:51"></i><i class="gh-c" data-l="2" style="--col:51"></i><i class="gh-c" data-l="1" style="--col:51"></i><i class="gh-c" data-l="0" style="--col:52"></i><i class="gh-c" data-l="0" style="--col:52"></i><i class="gh-c" data-l="0" style="--col:52"></i><i class="gh-c" data-l="1" style="--col:52"></i><i class="gh-c" data-l="1" style="--col:52"></i><i class="gh-c" data-l="1" style="--col:52"></i><i class="gh-c" data-l="3" style="--col:52"></i></div></div>
+        <div class="gh-caltop"><a data-link="github" href="https://github.com/gokulapap"><b>Building in the open</b> · Explore my GitHub ↗</a><span class="gh-leg" aria-hidden="true">Less <i data-l="0"></i><i data-l="1"></i><i data-l="2"></i><i data-l="3"></i><i data-l="4"></i> More</span></div>
+        <div class="gh-cal-scroll"><div class="gh-grid" aria-hidden="true"><i class="gh-c" data-l="0" style="--col:0"></i><i class="gh-c" data-l="0" style="--col:0"></i><i class="gh-c" data-l="1" style="--col:0"></i><i class="gh-c" data-l="0" style="--col:0"></i><i class="gh-c" data-l="1" style="--col:0"></i><i class="gh-c" data-l="0" style="--col:0"></i><i class="gh-c" data-l="0" style="--col:0"></i><i class="gh-c" data-l="1" style="--col:1"></i><i class="gh-c" data-l="0" style="--col:1"></i><i class="gh-c" data-l="0" style="--col:1"></i><i class="gh-c" data-l="0" style="--col:1"></i><i class="gh-c" data-l="0" style="--col:1"></i><i class="gh-c" data-l="0" style="--col:1"></i><i class="gh-c" data-l="2" style="--col:1"></i><i class="gh-c" data-l="0" style="--col:2"></i><i class="gh-c" data-l="0" style="--col:2"></i><i class="gh-c" data-l="1" style="--col:2"></i><i class="gh-c" data-l="3" style="--col:2"></i><i class="gh-c" data-l="1" style="--col:2"></i><i class="gh-c" data-l="0" style="--col:2"></i><i class="gh-c" data-l="4" style="--col:2"></i><i class="gh-c" data-l="0" style="--col:3"></i><i class="gh-c" data-l="2" style="--col:3"></i><i class="gh-c" data-l="0" style="--col:3"></i><i class="gh-c" data-l="0" style="--col:3"></i><i class="gh-c" data-l="0" style="--col:3"></i><i class="gh-c" data-l="0" style="--col:3"></i><i class="gh-c" data-l="2" style="--col:3"></i><i class="gh-c" data-l="0" style="--col:4"></i><i class="gh-c" data-l="1" style="--col:4"></i><i class="gh-c" data-l="1" style="--col:4"></i><i class="gh-c" data-l="0" style="--col:4"></i><i class="gh-c" data-l="1" style="--col:4"></i><i class="gh-c" data-l="0" style="--col:4"></i><i class="gh-c" data-l="0" style="--col:4"></i><i class="gh-c" data-l="0" style="--col:5"></i><i class="gh-c" data-l="1" style="--col:5"></i><i class="gh-c" data-l="0" style="--col:5"></i><i class="gh-c" data-l="0" style="--col:5"></i><i class="gh-c" data-l="1" style="--col:5"></i><i class="gh-c" data-l="0" style="--col:5"></i><i class="gh-c" data-l="0" style="--col:5"></i><i class="gh-c" data-l="2" style="--col:6"></i><i class="gh-c" data-l="1" style="--col:6"></i><i class="gh-c" data-l="0" style="--col:6"></i><i class="gh-c" data-l="1" style="--col:6"></i><i class="gh-c" data-l="1" style="--col:6"></i><i class="gh-c" data-l="3" style="--col:6"></i><i class="gh-c" data-l="2" style="--col:6"></i><i class="gh-c" data-l="0" style="--col:7"></i><i class="gh-c" data-l="4" style="--col:7"></i><i class="gh-c" data-l="0" style="--col:7"></i><i class="gh-c" data-l="0" style="--col:7"></i><i class="gh-c" data-l="2" style="--col:7"></i><i class="gh-c" data-l="0" style="--col:7"></i><i class="gh-c" data-l="1" style="--col:7"></i><i class="gh-c" data-l="0" style="--col:8"></i><i class="gh-c" data-l="1" style="--col:8"></i><i class="gh-c" data-l="2" style="--col:8"></i><i class="gh-c" data-l="1" style="--col:8"></i><i class="gh-c" data-l="3" style="--col:8"></i><i class="gh-c" data-l="0" style="--col:8"></i><i class="gh-c" data-l="2" style="--col:8"></i><i class="gh-c" data-l="1" style="--col:9"></i><i class="gh-c" data-l="1" style="--col:9"></i><i class="gh-c" data-l="1" style="--col:9"></i><i class="gh-c" data-l="2" style="--col:9"></i><i class="gh-c" data-l="3" style="--col:9"></i><i class="gh-c" data-l="1" style="--col:9"></i><i class="gh-c" data-l="1" style="--col:9"></i><i class="gh-c" data-l="0" style="--col:10"></i><i class="gh-c" data-l="2" style="--col:10"></i><i class="gh-c" data-l="1" style="--col:10"></i><i class="gh-c" data-l="4" style="--col:10"></i><i class="gh-c" data-l="2" style="--col:10"></i><i class="gh-c" data-l="0" style="--col:10"></i><i class="gh-c" data-l="0" style="--col:10"></i><i class="gh-c" data-l="1" style="--col:11"></i><i class="gh-c" data-l="0" style="--col:11"></i><i class="gh-c" data-l="1" style="--col:11"></i><i class="gh-c" data-l="0" style="--col:11"></i><i class="gh-c" data-l="0" style="--col:11"></i><i class="gh-c" data-l="0" style="--col:11"></i><i class="gh-c" data-l="2" style="--col:11"></i><i class="gh-c" data-l="0" style="--col:12"></i><i class="gh-c" data-l="0" style="--col:12"></i><i class="gh-c" data-l="0" style="--col:12"></i><i class="gh-c" data-l="3" style="--col:12"></i><i class="gh-c" data-l="0" style="--col:12"></i><i class="gh-c" data-l="1" style="--col:12"></i><i class="gh-c" data-l="1" style="--col:12"></i><i class="gh-c" data-l="3" style="--col:13"></i><i class="gh-c" data-l="2" style="--col:13"></i><i class="gh-c" data-l="3" style="--col:13"></i><i class="gh-c" data-l="0" style="--col:13"></i><i class="gh-c" data-l="0" style="--col:13"></i><i class="gh-c" data-l="0" style="--col:13"></i><i class="gh-c" data-l="3" style="--col:13"></i><i class="gh-c" data-l="4" style="--col:14"></i><i class="gh-c" data-l="0" style="--col:14"></i><i class="gh-c" data-l="0" style="--col:14"></i><i class="gh-c" data-l="0" style="--col:14"></i><i class="gh-c" data-l="0" style="--col:14"></i><i class="gh-c" data-l="1" style="--col:14"></i><i class="gh-c" data-l="1" style="--col:14"></i><i class="gh-c" data-l="0" style="--col:15"></i><i class="gh-c" data-l="0" style="--col:15"></i><i class="gh-c" data-l="1" style="--col:15"></i><i class="gh-c" data-l="0" style="--col:15"></i><i class="gh-c" data-l="1" style="--col:15"></i><i class="gh-c" data-l="4" style="--col:15"></i><i class="gh-c" data-l="2" style="--col:15"></i><i class="gh-c" data-l="1" style="--col:16"></i><i class="gh-c" data-l="1" style="--col:16"></i><i class="gh-c" data-l="2" style="--col:16"></i><i class="gh-c" data-l="0" style="--col:16"></i><i class="gh-c" data-l="3" style="--col:16"></i><i class="gh-c" data-l="2" style="--col:16"></i><i class="gh-c" data-l="3" style="--col:16"></i><i class="gh-c" data-l="2" style="--col:17"></i><i class="gh-c" data-l="0" style="--col:17"></i><i class="gh-c" data-l="1" style="--col:17"></i><i class="gh-c" data-l="0" style="--col:17"></i><i class="gh-c" data-l="2" style="--col:17"></i><i class="gh-c" data-l="0" style="--col:17"></i><i class="gh-c" data-l="0" style="--col:17"></i><i class="gh-c" data-l="0" style="--col:18"></i><i class="gh-c" data-l="0" style="--col:18"></i><i class="gh-c" data-l="0" style="--col:18"></i><i class="gh-c" data-l="0" style="--col:18"></i><i class="gh-c" data-l="0" style="--col:18"></i><i class="gh-c" data-l="0" style="--col:18"></i><i class="gh-c" data-l="0" style="--col:18"></i><i class="gh-c" data-l="0" style="--col:19"></i><i class="gh-c" data-l="0" style="--col:19"></i><i class="gh-c" data-l="3" style="--col:19"></i><i class="gh-c" data-l="1" style="--col:19"></i><i class="gh-c" data-l="0" style="--col:19"></i><i class="gh-c" data-l="0" style="--col:19"></i><i class="gh-c" data-l="0" style="--col:19"></i><i class="gh-c" data-l="0" style="--col:20"></i><i class="gh-c" data-l="0" style="--col:20"></i><i class="gh-c" data-l="3" style="--col:20"></i><i class="gh-c" data-l="4" style="--col:20"></i><i class="gh-c" data-l="1" style="--col:20"></i><i class="gh-c" data-l="1" style="--col:20"></i><i class="gh-c" data-l="0" style="--col:20"></i><i class="gh-c" data-l="0" style="--col:21"></i><i class="gh-c" data-l="0" style="--col:21"></i><i class="gh-c" data-l="0" style="--col:21"></i><i class="gh-c" data-l="3" style="--col:21"></i><i class="gh-c" data-l="0" style="--col:21"></i><i class="gh-c" data-l="0" style="--col:21"></i><i class="gh-c" data-l="4" style="--col:21"></i><i class="gh-c" data-l="1" style="--col:22"></i><i class="gh-c" data-l="0" style="--col:22"></i><i class="gh-c" data-l="1" style="--col:22"></i><i class="gh-c" data-l="0" style="--col:22"></i><i class="gh-c" data-l="1" style="--col:22"></i><i class="gh-c" data-l="4" style="--col:22"></i><i class="gh-c" data-l="3" style="--col:22"></i><i class="gh-c" data-l="2" style="--col:23"></i><i class="gh-c" data-l="0" style="--col:23"></i><i class="gh-c" data-l="1" style="--col:23"></i><i class="gh-c" data-l="0" style="--col:23"></i><i class="gh-c" data-l="2" style="--col:23"></i><i class="gh-c" data-l="1" style="--col:23"></i><i class="gh-c" data-l="2" style="--col:23"></i><i class="gh-c" data-l="0" style="--col:24"></i><i class="gh-c" data-l="0" style="--col:24"></i><i class="gh-c" data-l="3" style="--col:24"></i><i class="gh-c" data-l="4" style="--col:24"></i><i class="gh-c" data-l="3" style="--col:24"></i><i class="gh-c" data-l="3" style="--col:24"></i><i class="gh-c" data-l="3" style="--col:24"></i><i class="gh-c" data-l="2" style="--col:25"></i><i class="gh-c" data-l="0" style="--col:25"></i><i class="gh-c" data-l="1" style="--col:25"></i><i class="gh-c" data-l="1" style="--col:25"></i><i class="gh-c" data-l="0" style="--col:25"></i><i class="gh-c" data-l="0" style="--col:25"></i><i class="gh-c" data-l="0" style="--col:25"></i><i class="gh-c" data-l="0" style="--col:26"></i><i class="gh-c" data-l="2" style="--col:26"></i><i class="gh-c" data-l="4" style="--col:26"></i><i class="gh-c" data-l="1" style="--col:26"></i><i class="gh-c" data-l="4" style="--col:26"></i><i class="gh-c" data-l="4" style="--col:26"></i><i class="gh-c" data-l="4" style="--col:26"></i><i class="gh-c" data-l="1" style="--col:27"></i><i class="gh-c" data-l="0" style="--col:27"></i><i class="gh-c" data-l="0" style="--col:27"></i><i class="gh-c" data-l="0" style="--col:27"></i><i class="gh-c" data-l="0" style="--col:27"></i><i class="gh-c" data-l="2" style="--col:27"></i><i class="gh-c" data-l="3" style="--col:27"></i><i class="gh-c" data-l="3" style="--col:28"></i><i class="gh-c" data-l="1" style="--col:28"></i><i class="gh-c" data-l="2" style="--col:28"></i><i class="gh-c" data-l="3" style="--col:28"></i><i class="gh-c" data-l="0" style="--col:28"></i><i class="gh-c" data-l="2" style="--col:28"></i><i class="gh-c" data-l="4" style="--col:28"></i><i class="gh-c" data-l="3" style="--col:29"></i><i class="gh-c" data-l="2" style="--col:29"></i><i class="gh-c" data-l="1" style="--col:29"></i><i class="gh-c" data-l="0" style="--col:29"></i><i class="gh-c" data-l="3" style="--col:29"></i><i class="gh-c" data-l="1" style="--col:29"></i><i class="gh-c" data-l="3" style="--col:29"></i><i class="gh-c" data-l="4" style="--col:30"></i><i class="gh-c" data-l="1" style="--col:30"></i><i class="gh-c" data-l="1" style="--col:30"></i><i class="gh-c" data-l="4" style="--col:30"></i><i class="gh-c" data-l="2" style="--col:30"></i><i class="gh-c" data-l="0" style="--col:30"></i><i class="gh-c" data-l="0" style="--col:30"></i><i class="gh-c" data-l="0" style="--col:31"></i><i class="gh-c" data-l="4" style="--col:31"></i><i class="gh-c" data-l="3" style="--col:31"></i><i class="gh-c" data-l="0" style="--col:31"></i><i class="gh-c" data-l="3" style="--col:31"></i><i class="gh-c" data-l="4" style="--col:31"></i><i class="gh-c" data-l="2" style="--col:31"></i><i class="gh-c" data-l="1" style="--col:32"></i><i class="gh-c" data-l="2" style="--col:32"></i><i class="gh-c" data-l="0" style="--col:32"></i><i class="gh-c" data-l="0" style="--col:32"></i><i class="gh-c" data-l="4" style="--col:32"></i><i class="gh-c" data-l="2" style="--col:32"></i><i class="gh-c" data-l="1" style="--col:32"></i><i class="gh-c" data-l="4" style="--col:33"></i><i class="gh-c" data-l="1" style="--col:33"></i><i class="gh-c" data-l="3" style="--col:33"></i><i class="gh-c" data-l="3" style="--col:33"></i><i class="gh-c" data-l="0" style="--col:33"></i><i class="gh-c" data-l="0" style="--col:33"></i><i class="gh-c" data-l="0" style="--col:33"></i><i class="gh-c" data-l="0" style="--col:34"></i><i class="gh-c" data-l="2" style="--col:34"></i><i class="gh-c" data-l="0" style="--col:34"></i><i class="gh-c" data-l="1" style="--col:34"></i><i class="gh-c" data-l="0" style="--col:34"></i><i class="gh-c" data-l="4" style="--col:34"></i><i class="gh-c" data-l="1" style="--col:34"></i><i class="gh-c" data-l="1" style="--col:35"></i><i class="gh-c" data-l="2" style="--col:35"></i><i class="gh-c" data-l="4" style="--col:35"></i><i class="gh-c" data-l="1" style="--col:35"></i><i class="gh-c" data-l="4" style="--col:35"></i><i class="gh-c" data-l="1" style="--col:35"></i><i class="gh-c" data-l="2" style="--col:35"></i><i class="gh-c" data-l="2" style="--col:36"></i><i class="gh-c" data-l="0" style="--col:36"></i><i class="gh-c" data-l="1" style="--col:36"></i><i class="gh-c" data-l="0" style="--col:36"></i><i class="gh-c" data-l="0" style="--col:36"></i><i class="gh-c" data-l="3" style="--col:36"></i><i class="gh-c" data-l="0" style="--col:36"></i><i class="gh-c" data-l="1" style="--col:37"></i><i class="gh-c" data-l="3" style="--col:37"></i><i class="gh-c" data-l="2" style="--col:37"></i><i class="gh-c" data-l="1" style="--col:37"></i><i class="gh-c" data-l="2" style="--col:37"></i><i class="gh-c" data-l="2" style="--col:37"></i><i class="gh-c" data-l="3" style="--col:37"></i><i class="gh-c" data-l="0" style="--col:38"></i><i class="gh-c" data-l="2" style="--col:38"></i><i class="gh-c" data-l="0" style="--col:38"></i><i class="gh-c" data-l="1" style="--col:38"></i><i class="gh-c" data-l="3" style="--col:38"></i><i class="gh-c" data-l="2" style="--col:38"></i><i class="gh-c" data-l="2" style="--col:38"></i><i class="gh-c" data-l="3" style="--col:39"></i><i class="gh-c" data-l="4" style="--col:39"></i><i class="gh-c" data-l="1" style="--col:39"></i><i class="gh-c" data-l="2" style="--col:39"></i><i class="gh-c" data-l="2" style="--col:39"></i><i class="gh-c" data-l="2" style="--col:39"></i><i class="gh-c" data-l="2" style="--col:39"></i><i class="gh-c" data-l="1" style="--col:40"></i><i class="gh-c" data-l="2" style="--col:40"></i><i class="gh-c" data-l="1" style="--col:40"></i><i class="gh-c" data-l="4" style="--col:40"></i><i class="gh-c" data-l="2" style="--col:40"></i><i class="gh-c" data-l="4" style="--col:40"></i><i class="gh-c" data-l="4" style="--col:40"></i><i class="gh-c" data-l="1" style="--col:41"></i><i class="gh-c" data-l="2" style="--col:41"></i><i class="gh-c" data-l="4" style="--col:41"></i><i class="gh-c" data-l="3" style="--col:41"></i><i class="gh-c" data-l="0" style="--col:41"></i><i class="gh-c" data-l="0" style="--col:41"></i><i class="gh-c" data-l="1" style="--col:41"></i><i class="gh-c" data-l="0" style="--col:42"></i><i class="gh-c" data-l="1" style="--col:42"></i><i class="gh-c" data-l="0" style="--col:42"></i><i class="gh-c" data-l="2" style="--col:42"></i><i class="gh-c" data-l="3" style="--col:42"></i><i class="gh-c" data-l="4" style="--col:42"></i><i class="gh-c" data-l="0" style="--col:42"></i><i class="gh-c" data-l="3" style="--col:43"></i><i class="gh-c" data-l="2" style="--col:43"></i><i class="gh-c" data-l="0" style="--col:43"></i><i class="gh-c" data-l="4" style="--col:43"></i><i class="gh-c" data-l="4" style="--col:43"></i><i class="gh-c" data-l="0" style="--col:43"></i><i class="gh-c" data-l="4" style="--col:43"></i><i class="gh-c" data-l="1" style="--col:44"></i><i class="gh-c" data-l="2" style="--col:44"></i><i class="gh-c" data-l="4" style="--col:44"></i><i class="gh-c" data-l="3" style="--col:44"></i><i class="gh-c" data-l="0" style="--col:44"></i><i class="gh-c" data-l="1" style="--col:44"></i><i class="gh-c" data-l="2" style="--col:44"></i><i class="gh-c" data-l="1" style="--col:45"></i><i class="gh-c" data-l="0" style="--col:45"></i><i class="gh-c" data-l="1" style="--col:45"></i><i class="gh-c" data-l="3" style="--col:45"></i><i class="gh-c" data-l="0" style="--col:45"></i><i class="gh-c" data-l="2" style="--col:45"></i><i class="gh-c" data-l="1" style="--col:45"></i><i class="gh-c" data-l="0" style="--col:46"></i><i class="gh-c" data-l="1" style="--col:46"></i><i class="gh-c" data-l="2" style="--col:46"></i><i class="gh-c" data-l="2" style="--col:46"></i><i class="gh-c" data-l="0" style="--col:46"></i><i class="gh-c" data-l="4" style="--col:46"></i><i class="gh-c" data-l="3" style="--col:46"></i><i class="gh-c" data-l="4" style="--col:47"></i><i class="gh-c" data-l="0" style="--col:47"></i><i class="gh-c" data-l="1" style="--col:47"></i><i class="gh-c" data-l="0" style="--col:47"></i><i class="gh-c" data-l="3" style="--col:47"></i><i class="gh-c" data-l="1" style="--col:47"></i><i class="gh-c" data-l="0" style="--col:47"></i><i class="gh-c" data-l="1" style="--col:48"></i><i class="gh-c" data-l="4" style="--col:48"></i><i class="gh-c" data-l="3" style="--col:48"></i><i class="gh-c" data-l="1" style="--col:48"></i><i class="gh-c" data-l="0" style="--col:48"></i><i class="gh-c" data-l="4" style="--col:48"></i><i class="gh-c" data-l="2" style="--col:48"></i><i class="gh-c" data-l="3" style="--col:49"></i><i class="gh-c" data-l="0" style="--col:49"></i><i class="gh-c" data-l="0" style="--col:49"></i><i class="gh-c" data-l="3" style="--col:49"></i><i class="gh-c" data-l="1" style="--col:49"></i><i class="gh-c" data-l="0" style="--col:49"></i><i class="gh-c" data-l="4" style="--col:49"></i><i class="gh-c" data-l="2" style="--col:50"></i><i class="gh-c" data-l="3" style="--col:50"></i><i class="gh-c" data-l="0" style="--col:50"></i><i class="gh-c" data-l="4" style="--col:50"></i><i class="gh-c" data-l="0" style="--col:50"></i><i class="gh-c" data-l="4" style="--col:50"></i><i class="gh-c" data-l="2" style="--col:50"></i><i class="gh-c" data-l="1" style="--col:51"></i><i class="gh-c" data-l="2" style="--col:51"></i><i class="gh-c" data-l="4" style="--col:51"></i><i class="gh-c" data-l="1" style="--col:51"></i><i class="gh-c" data-l="0" style="--col:51"></i><i class="gh-c" data-l="2" style="--col:51"></i><i class="gh-c" data-l="1" style="--col:51"></i><i class="gh-c" data-l="0" style="--col:52"></i><i class="gh-c" data-l="0" style="--col:52"></i><i class="gh-c" data-l="0" style="--col:52"></i><i class="gh-c" data-l="1" style="--col:52"></i><i class="gh-c" data-l="1" style="--col:52"></i><i class="gh-c" data-l="1" style="--col:52"></i><i class="gh-c" data-l="3" style="--col:52"></i></div></div>
       </div>
 
       <div class="gr-grid">
@@ -2035,7 +2089,7 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
           <span class="gr-flagtag"><svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"></path></svg>flagship</span>
           <div class="gr-head">
             <svg class="gr-repoicon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
-            <a class="gr-name" data-link="ctf" href="#">devops-ctf</a>
+            <a class="gr-name" data-link="ctf" href="https://www.devops-ctf.com">devops-ctf</a>
             <span class="gr-vis"><svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 2a6 6 0 1 0 0 12A6 6 0 0 0 8 2ZM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-5.5a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 .15.354l2.5 2.5a.5.5 0 0 0 .708-.708L8.5 7.293V3a.5.5 0 0 0-.5-.5Z"></path></svg>public</span>
           </div>
           <p class="gr-desc">Platform where engineers debug real production incidents in isolated cloud sandboxes — DevOps made learnable by doing.</p>
@@ -2047,8 +2101,8 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
           </div>
           <div class="gr-foot">
             <span class="gr-lang"><span class="gr-dot gr-go"></span>Go</span>
-            <a class="gr-src" data-link="ctfRepo" href="#">source</a>
-            <a class="gr-view" data-link="ctf" href="#">view<svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.5-1h4a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-1.5 0V3.56L8.78 8.03a.75.75 0 0 1-1.06-1.06l4.47-4.47h-1.94a.75.75 0 0 1 0-1.5Z"></path></svg></a>
+            <a class="gr-src" data-link="ctfRepo" href="https://www.devops-ctf.com">website</a>
+            <a class="gr-view" data-link="ctf" href="https://www.devops-ctf.com">view<svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.5-1h4a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-1.5 0V3.56L8.78 8.03a.75.75 0 0 1-1.06-1.06l4.47-4.47h-1.94a.75.75 0 0 1 0-1.5Z"></path></svg></a>
           </div>
         </article>
 
@@ -2056,7 +2110,7 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
         <article class="gr-card" style="--i:1">
           <div class="gr-head">
             <svg class="gr-repoicon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
-            <a class="gr-name" data-link="reconator" href="#">reconator</a>
+            <a class="gr-name" data-link="reconator" href="https://github.com/gokulapap/Reconator">reconator</a>
             <span class="gr-vis"><svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 2a6 6 0 1 0 0 12A6 6 0 0 0 8 2ZM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-5.5a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 .15.354l2.5 2.5a.5.5 0 0 0 .708-.708L8.5 7.293V3a.5.5 0 0 0-.5-.5Z"></path></svg>public</span>
           </div>
           <p class="gr-desc">Automated recon framework for bug-bounty — subdomain enumeration, port scanning, and vulnerability discovery in one pipeline.</p>
@@ -2067,7 +2121,7 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
           </div>
           <div class="gr-foot">
             <span class="gr-lang"><span class="gr-dot gr-py"></span>Python</span>
-            <a class="gr-view" data-link="reconator" href="#">view<svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.5-1h4a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-1.5 0V3.56L8.78 8.03a.75.75 0 0 1-1.06-1.06l4.47-4.47h-1.94a.75.75 0 0 1 0-1.5Z"></path></svg></a>
+            <a class="gr-view" data-link="reconator" href="https://github.com/gokulapap/Reconator">view<svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.5-1h4a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-1.5 0V3.56L8.78 8.03a.75.75 0 0 1-1.06-1.06l4.47-4.47h-1.94a.75.75 0 0 1 0-1.5Z"></path></svg></a>
           </div>
         </article>
 
@@ -2075,7 +2129,7 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
         <article class="gr-card" style="--i:2">
           <div class="gr-head">
             <svg class="gr-repoicon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
-            <a class="gr-name" data-link="mcp" href="#">bugbounty-mcp-server</a>
+            <a class="gr-name" data-link="mcp" href="https://github.com/gokulapap/bugbounty-mcp-server">bugbounty-mcp-server</a>
             <span class="gr-vis"><svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 2a6 6 0 1 0 0 12A6 6 0 0 0 8 2ZM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-5.5a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 .15.354l2.5 2.5a.5.5 0 0 0 .708-.708L8.5 7.293V3a.5.5 0 0 0-.5-.5Z"></path></svg>public</span>
           </div>
           <p class="gr-desc">Brings offensive-security tooling into LLM agents through the Model Context Protocol — AI that can actually run a recon workflow.</p>
@@ -2085,8 +2139,8 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
             <span class="chip">LLM</span>
           </div>
           <div class="gr-foot">
-            <span class="gr-lang"><span class="gr-dot gr-ts"></span>TypeScript</span>
-            <a class="gr-view" data-link="mcp" href="#">view<svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.5-1h4a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-1.5 0V3.56L8.78 8.03a.75.75 0 0 1-1.06-1.06l4.47-4.47h-1.94a.75.75 0 0 1 0-1.5Z"></path></svg></a>
+            <span class="gr-lang"><span class="gr-dot gr-py"></span>Python</span>
+            <a class="gr-view" data-link="mcp" href="https://github.com/gokulapap/bugbounty-mcp-server">view<svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.5-1h4a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-1.5 0V3.56L8.78 8.03a.75.75 0 0 1-1.06-1.06l4.47-4.47h-1.94a.75.75 0 0 1 0-1.5Z"></path></svg></a>
           </div>
         </article>
 
@@ -2094,7 +2148,7 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
         <article class="gr-card" style="--i:3">
           <div class="gr-head">
             <svg class="gr-repoicon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
-            <a class="gr-name" data-link="wappalyzer" href="#">wappalyzer-cli</a>
+            <a class="gr-name" data-link="wappalyzer" href="https://github.com/gokulapap/wappalyzer-cli">wappalyzer-cli</a>
             <span class="gr-vis"><svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 2a6 6 0 1 0 0 12A6 6 0 0 0 8 2ZM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-5.5a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 .15.354l2.5 2.5a.5.5 0 0 0 .708-.708L8.5 7.293V3a.5.5 0 0 0-.5-.5Z"></path></svg>public</span>
           </div>
           <p class="gr-desc">Fast command-line technology fingerprinting — detect frameworks, servers, and libraries behind any target in seconds.</p>
@@ -2104,7 +2158,7 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
           </div>
           <div class="gr-foot">
             <span class="gr-lang"><span class="gr-dot gr-go"></span>Go</span>
-            <a class="gr-view" data-link="wappalyzer" href="#">view<svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.5-1h4a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-1.5 0V3.56L8.78 8.03a.75.75 0 0 1-1.06-1.06l4.47-4.47h-1.94a.75.75 0 0 1 0-1.5Z"></path></svg></a>
+            <a class="gr-view" data-link="wappalyzer" href="https://github.com/gokulapap/wappalyzer-cli">view<svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.5-1h4a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-1.5 0V3.56L8.78 8.03a.75.75 0 0 1-1.06-1.06l4.47-4.47h-1.94a.75.75 0 0 1 0-1.5Z"></path></svg></a>
           </div>
         </article>
 
@@ -2112,7 +2166,7 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
         <article class="gr-card" style="--i:4">
           <div class="gr-head">
             <svg class="gr-repoicon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
-            <a class="gr-name" data-link="resources" href="#">pentesting-resources</a>
+            <a class="gr-name" data-link="resources" href="https://github.com/gokulapap/Pentesting-Resources">pentesting-resources</a>
             <span class="gr-vis"><svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 2a6 6 0 1 0 0 12A6 6 0 0 0 8 2ZM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-5.5a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 .15.354l2.5 2.5a.5.5 0 0 0 .708-.708L8.5 7.293V3a.5.5 0 0 0-.5-.5Z"></path></svg>public</span>
           </div>
           <p class="gr-desc">Curated, widely-used collection of bug-bounty and penetration-testing resources, references, and methodology.</p>
@@ -2123,7 +2177,7 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
           </div>
           <div class="gr-foot">
             <span class="gr-lang"><span class="gr-dot gr-ref"></span>Reference</span>
-            <a class="gr-view" data-link="resources" href="#">view<svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.5-1h4a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-1.5 0V3.56L8.78 8.03a.75.75 0 0 1-1.06-1.06l4.47-4.47h-1.94a.75.75 0 0 1 0-1.5Z"></path></svg></a>
+            <a class="gr-view" data-link="resources" href="https://github.com/gokulapap/Pentesting-Resources">view<svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.5-1h4a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-1.5 0V3.56L8.78 8.03a.75.75 0 0 1-1.06-1.06l4.47-4.47h-1.94a.75.75 0 0 1 0-1.5Z"></path></svg></a>
           </div>
         </article>
 
@@ -2131,7 +2185,7 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
         <article class="gr-card" style="--i:5">
           <div class="gr-head">
             <svg class="gr-repoicon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
-            <a class="gr-name" data-link="kustomize" href="#">kustomize-to-helm</a>
+            <a class="gr-name" data-link="kustomize" href="https://github.com/gokulapap/kustomize_to_helm">kustomize-to-helm</a>
             <span class="gr-vis"><svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 2a6 6 0 1 0 0 12A6 6 0 0 0 8 2ZM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-5.5a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 .15.354l2.5 2.5a.5.5 0 0 0 .708-.708L8.5 7.293V3a.5.5 0 0 0-.5-.5Z"></path></svg>public</span>
           </div>
           <p class="gr-desc">Fleet-wide automated migration of Kubernetes manifests from Kustomize to Helm — safely, across many clusters at once.</p>
@@ -2141,8 +2195,8 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
             <span class="chip">K8s</span>
           </div>
           <div class="gr-foot">
-            <span class="gr-lang"><span class="gr-dot gr-go"></span>Go</span>
-            <a class="gr-view" data-link="kustomize" href="#">view<svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.5-1h4a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-1.5 0V3.56L8.78 8.03a.75.75 0 0 1-1.06-1.06l4.47-4.47h-1.94a.75.75 0 0 1 0-1.5Z"></path></svg></a>
+            <span class="gr-lang"><span class="gr-dot gr-py"></span>Python</span>
+            <a class="gr-view" data-link="kustomize" href="https://github.com/gokulapap/kustomize_to_helm">view<svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.5-1h4a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-1.5 0V3.56L8.78 8.03a.75.75 0 0 1-1.06-1.06l4.47-4.47h-1.94a.75.75 0 0 1 0-1.5Z"></path></svg></a>
           </div>
         </article>
 
@@ -2171,9 +2225,9 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
           <h3>Debug real production incidents —<br>in live cloud sandboxes.</h3>
           <p class="ctf-pitch">A polished open-source platform where engineers fix realistic infrastructure failures, not toy puzzles. Real terminals, real cloud, graded automatically.</p>
           <div class="ctf-cta">
-            <a class="btn btn-fill" data-link="ctf" href="#" target="_blank" rel="noopener">Launch DevOps CTF
+            <a class="btn btn-fill" data-link="ctf" href="https://www.devops-ctf.com" target="_blank" rel="noopener">Launch DevOps CTF
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            <a class="btn btn-line" data-link="ctfRepo" href="#" target="_blank" rel="noopener">
+            <a class="btn btn-line" data-link="ctfRepo" href="https://www.devops-ctf.com" target="_blank" rel="noopener">
               <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
               Source</a>
           </div>
@@ -2330,7 +2384,7 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
         <div class="sf-row" role="listitem">
           <span class="sf-n">001</span>
           <div>
-            <h4>Critical vulns affecting many users</h4>
+            <h3>Critical vulns affecting many users</h3>
             <p>Reported in widely-used platforms protecting large user bases; coordinated a full remediation.</p>
             <div class="sf-meta"><span class="sf-mk"><b>scope:</b> widely-used platforms</span></div>
           </div>
@@ -2343,7 +2397,7 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
         <div class="sf-row" role="listitem">
           <span class="sf-n">002</span>
           <div>
-            <h4>Credential &amp; token exposure</h4>
+            <h3>Credential &amp; token exposure</h3>
             <p>Account- and infrastructure-takeover paths from leaked credentials, reported with remediation guidance.</p>
             <div class="sf-meta"><span class="sf-mk"><b>class:</b> auth / secrets</span></div>
           </div>
@@ -2356,7 +2410,7 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
         <div class="sf-row" role="listitem">
           <span class="sf-n">003</span>
           <div>
-            <h4>Google Hall of Fame</h4>
+            <h3>Google Hall of Fame</h3>
             <p>Inducted for a sustained track record of high-signal, responsibly-disclosed reports.</p>
             <div class="sf-meta"><span class="sf-mk"><b>recognition:</b> google security</span></div>
           </div>
@@ -2369,8 +2423,8 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
         <div class="sf-row" role="listitem">
           <span class="sf-n">004</span>
           <div>
-            <h4>Published research &amp; tooling</h4>
-            <p>Writeups plus open-source automation — <a class="tlink" data-link="reconator" href="#" target="_blank" rel="noopener">Reconator</a> and <a class="tlink" data-link="mcp" href="#" target="_blank" rel="noopener">BugBounty MCP</a> — used by other hunters.</p>
+            <h3>Published research &amp; tooling</h3>
+            <p>Writeups plus open-source automation — <a class="tlink" data-link="reconator" href="https://github.com/gokulapap/Reconator" target="_blank" rel="noopener">Reconator</a> and <a class="tlink" data-link="mcp" href="https://github.com/gokulapap/bugbounty-mcp-server" target="_blank" rel="noopener">BugBounty MCP</a> — used by other hunters.</p>
             <div class="sf-meta"><span class="sf-mk"><b>artifacts:</b> writeups + OSS</span></div>
           </div>
           <div class="sf-right">
@@ -2574,19 +2628,19 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
           </div>
           <div class="cx-conn"></div>
           <div class="cx-tier cx-pods">
-            <a class="cx-node cx-pod" data-link="email" href="#" aria-label="Email Gokul">
+            <a class="cx-node cx-pod" data-link="email" href="mailto:apgokul008@gmail.com" aria-label="Email Gokul">
               <span class="cx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#bf4527" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
               <span class="cx-t"><b>Email</b><span>Pod &middot; Running</span></span><span class="cx-hd"></span>
             </a>
-            <a class="cx-node cx-pod" data-link="github" href="#" target="_blank" rel="noopener" aria-label="GitHub">
+            <a class="cx-node cx-pod" data-link="github" href="https://github.com/gokulapap" target="_blank" rel="noopener" aria-label="GitHub">
               <span class="cx-ic"><svg viewBox="0 0 24 24" fill="#24292f" aria-hidden="true"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.6.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.3-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .3.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 3.9-1.3 6.8-5.1 6.8-9.6C22 6.6 17.5 2 12 2z"/></svg></span>
               <span class="cx-t"><b>GitHub</b><span>Pod &middot; Running</span></span><span class="cx-hd"></span>
             </a>
-            <a class="cx-node cx-pod" data-link="linkedin" href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <a class="cx-node cx-pod" data-link="linkedin" href="https://www.linkedin.com/in/gokulap" target="_blank" rel="noopener" aria-label="LinkedIn">
               <span class="cx-ic"><svg viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-.9 1.8-1.9 3.6-1.9 3.9 0 4.6 2.5 4.6 5.8V21h-4v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21H9z"/></svg></span>
               <span class="cx-t"><b>LinkedIn</b><span>Pod &middot; Running</span></span><span class="cx-hd"></span>
             </a>
-            <a class="cx-node cx-pod" data-link="x" href="#" target="_blank" rel="noopener" aria-label="Twitter">
+            <a class="cx-node cx-pod" data-link="x" href="https://twitter.com/CodingGokul" target="_blank" rel="noopener" aria-label="Twitter">
               <span class="cx-ic"><svg viewBox="0 0 24 24" fill="#0f1419" aria-hidden="true"><path d="M17.5 3h3l-7 8 8.2 10h-6.4l-5-6.1L8 21H5l7.5-8.6L4.5 3h6.5l4.5 5.6zM16.4 19h1.7L8 5H6.2z"/></svg></span>
               <span class="cx-t"><b>Twitter</b><span>Pod &middot; Running</span></span><span class="cx-hd"></span>
             </a>
@@ -2600,10 +2654,10 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
         <h3 class="cx-h">Let&rsquo;s build something that ships safely.</h3>
         <p class="cx-sub">Hiring for platform, DevOps, SRE or security engineering? I turn manual work into automated systems and design for blast-radius. Every channel here is a healthy pod &mdash; reach me on any of them.</p>
         <div class="cx-cta">
-          <a class="btn btn-fill" data-link="email" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg> Email</a>
-          <a class="btn btn-line" data-link="github" href="#" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn btn-line" data-link="linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn btn-line" data-link="resume" href="#" target="_blank" rel="noopener">Resume</a>
+          <a class="btn btn-fill" data-link="email" href="mailto:apgokul008@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg> Email</a>
+          <a class="btn btn-line" data-link="github" href="https://github.com/gokulapap" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-line" data-link="linkedin" href="https://www.linkedin.com/in/gokulap" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-line" data-link="resume" href="https://drive.google.com/file/d/1DMduvlCWw_Y9Td9yEoSWNpeWp69JRS0V/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
         </div>
         <div class="cx-meta">
           <div><b>Availability</b><span class="g">&#9679; responds in &lt; 24h</span></div>
@@ -2615,7 +2669,7 @@ a.cx-pod:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 10p
   </div>
 </section>
 </main>
-<footer><div class="container"><div>© 2026 Gokul A P — built with caffeine &amp; YAML</div><div style="display:flex;gap:14px;align-items:center"><a data-link="github" href="#" target="_blank" rel="noopener" aria-label="GitHub" style="color:#24292f;display:inline-flex"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.6.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.3-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .3.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 3.9-1.3 6.8-5.1 6.8-9.6C22 6.6 17.5 2 12 2z"/></svg></a><a data-link="linkedin" href="#" target="_blank" rel="noopener" aria-label="LinkedIn" style="color:#0A66C2;display:inline-flex"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-.9 1.8-1.9 3.6-1.9 3.9 0 4.6 2.5 4.6 5.8V21h-4v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21H9z"/></svg></a><a data-link="x" href="#" target="_blank" rel="noopener" aria-label="Twitter" style="color:#0f1419;display:inline-flex"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3l-7 8 8.2 10h-6.4l-5-6.1L8 21H5l7.5-8.6L4.5 3h6.5l4.5 5.6zM16.4 19h1.7L8 5h-1.8z"/></svg></a><a data-link="email" href="#" aria-label="Email" style="color:#bf4527;display:inline-flex"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a></div><div>Bengaluru, IN · devops · security</div></div></footer>
+<footer><div class="container"><div>© 2026 Gokul A P — built with caffeine &amp; YAML</div><div style="display:flex;gap:14px;align-items:center"><a data-link="github" href="https://github.com/gokulapap" target="_blank" rel="noopener" aria-label="GitHub" style="color:#24292f;display:inline-flex"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.6.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.3-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .3.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 3.9-1.3 6.8-5.1 6.8-9.6C22 6.6 17.5 2 12 2z"/></svg></a><a data-link="linkedin" href="https://www.linkedin.com/in/gokulap" target="_blank" rel="noopener" aria-label="LinkedIn" style="color:#0A66C2;display:inline-flex"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-.9 1.8-1.9 3.6-1.9 3.9 0 4.6 2.5 4.6 5.8V21h-4v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21H9z"/></svg></a><a data-link="x" href="https://twitter.com/CodingGokul" target="_blank" rel="noopener" aria-label="Twitter" style="color:#0f1419;display:inline-flex"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3l-7 8 8.2 10h-6.4l-5-6.1L8 21H5l7.5-8.6L4.5 3h6.5l4.5 5.6zM16.4 19h1.7L8 5h-1.8z"/></svg></a><a data-link="email" href="mailto:apgokul008@gmail.com" aria-label="Email" style="color:#bf4527;display:inline-flex"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a></div><div>Bengaluru, IN · devops · security</div></div></footer>
 <script>
 "use strict";
 var LINKS={email:"mailto:apgokul008@gmail.com",github:"https://github.com/gokulapap",linkedin:"https://www.linkedin.com/in/gokulap",x:"https://twitter.com/CodingGokul",resume:"https://drive.google.com/file/d/1DMduvlCWw_Y9Td9yEoSWNpeWp69JRS0V/view?usp=sharing",ctf:"https://www.devops-ctf.com",ctfRepo:"https://www.devops-ctf.com",reconator:"https://github.com/gokulapap/Reconator",mcp:"https://github.com/gokulapap/bugbounty-mcp-server",wappalyzer:"https://github.com/gokulapap/wappalyzer-cli",resources:"https://github.com/gokulapap/Pentesting-Resources",kustomize:"https://github.com/gokulapap/kustomize_to_helm"};
@@ -2623,8 +2677,16 @@ var $=function(s,r){return (r||document).querySelector(s);},$$=function(s,r){ret
 $$("[data-link]").forEach(function(el){var k=el.getAttribute("data-link");if(LINKS[k])el.setAttribute("href",LINKS[k]);});
 $$("[data-link-card]").forEach(function(c){var k=c.getAttribute("data-link-card");if(LINKS[k])c.addEventListener("click",function(e){if(!e.target.closest("a"))window.open(LINKS[k],"_blank","noopener");});});
 var tb=$("#topbar"),bg=$("#burger");addEventListener("scroll",function(){if(tb)tb.classList.toggle("solid",scrollY>24);},{passive:true});if(tb)tb.classList.toggle("solid",scrollY>24);
-if(bg)bg.addEventListener("click",function(){var o=document.body.classList.toggle("menu-open");bg.setAttribute("aria-expanded",o);});
-$$("#nav a").forEach(function(a){a.addEventListener("click",function(){document.body.classList.remove("menu-open");if(bg)bg.setAttribute("aria-expanded","false");});});
+function setMenu(open){
+  document.body.classList.toggle("menu-open",open);
+  if(bg){bg.setAttribute("aria-expanded",String(open));bg.setAttribute("aria-label",open?"Close navigation":"Open navigation");}
+}
+if(bg)bg.addEventListener("click",function(){setMenu(!document.body.classList.contains("menu-open"));});
+$$("#nav a").forEach(function(a){a.addEventListener("click",function(){setMenu(false);});});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&document.body.classList.contains("menu-open")){setMenu(false);if(bg)bg.focus();}});
+document.addEventListener("click",function(e){if(tb&&!tb.contains(e.target))setMenu(false);});
+document.addEventListener("focusin",function(e){if(tb&&!tb.contains(e.target))setMenu(false);});
+addEventListener("resize",function(){if(innerWidth>900)setMenu(false);});
 var io=new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("is-in");o.unobserve(e.target);}});},{rootMargin:"0px 0px -8% 0px"});
 $$(".reveal").forEach(function(el){io.observe(el);});
 var navmap={};$$("#nav a[href^=\'#\']").forEach(function(a){navmap[a.getAttribute("href").slice(1)]=a;});
@@ -2867,10 +2929,9 @@ $$("section[data-spy]").forEach(function(s){new IntersectionObserver(function(es
 </script>
 <script>(function(){var plot=document.getElementById("gfPlot");if(!plot)return;var cross=document.getElementById("gfCross"),dot=document.getElementById("gfDot"),tip=document.getElementById("gfTip");var years=["2019","2020","2021","2022","2023","2024","2025"],vals=[8,22,41,63,82,97,108],xr=[0,.166,.333,.5,.666,.833,1],ys=[188,167,138,105,77,54,38];function move(e){var r=plot.getBoundingClientRect(),cx=((e.touches?e.touches[0].clientX:e.clientX)-r.left)/r.width;cx=cx<0?0:cx>1?1:cx;var i=0,best=9;for(var k=0;k<xr.length;k++){var d=Math.abs(xr[k]-cx);if(d<best){best=d;i=k}}var px=xr[i]*r.width,py=ys[i]/200*r.height;cross.style.left=px+"px";dot.style.left=px+"px";dot.style.top=py+"px";tip.style.left=px+"px";tip.style.top=py+"px";tip.innerHTML="<span class='d'>"+years[i]+"</span> &nbsp;<b>"+vals[i]+"</b> findings"}plot.addEventListener("mousemove",move);plot.addEventListener("touchmove",function(e){move(e)},{passive:true});})();</script>
 <script>
-/* ════ v2 — pipeline rail · card tilt · heatmap tooltip · 3D hero ════ */
+/* ════ Pipeline rail · repository details ════ */
 (function(){
 "use strict";
-var REDUCE=window.matchMedia&&window.matchMedia("(prefers-reduced-motion:reduce)").matches;
 
 /* ── pipeline rail: every section is a CI stage ── */
 (function(){
@@ -2910,37 +2971,6 @@ var REDUCE=window.matchMedia&&window.matchMedia("(prefers-reduced-motion:reduce)
   update();
 })();
 
-/* ── 3D tilt on cards (hover-capable, motion-ok devices only) ── */
-(function(){
-  if(REDUCE)return;
-  if(!(window.matchMedia&&matchMedia("(hover:hover) and (pointer:fine)").matches))return;
-  var sel="#projects .gr-card,.gs-panel,#skills .kr-tile,#about .mf-tile,.cx-node,#ctf .ctf-feat,.fig-portrait .fig-frame";
-  [].slice.call(document.querySelectorAll(sel)).forEach(function(el){
-    el.classList.add("sheen");
-    var raf=null;
-    function onMove(e){
-      var r=el.getBoundingClientRect();
-      var x=e.clientX-r.left,y=e.clientY-r.top;
-      var px=x/r.width-.5,py=y/r.height-.5;
-      var rx=(-py*6).toFixed(2),ry=(px*8).toFixed(2);
-      el.style.setProperty("--mx",(x/r.width*100).toFixed(1)+"%");
-      el.style.setProperty("--my",(y/r.height*100).toFixed(1)+"%");
-      if(raf)return;
-      raf=requestAnimationFrame(function(){
-        raf=null;
-        el.style.transform="perspective(760px) rotateX("+rx+"deg) rotateY("+ry+"deg) translateY(-2px)";
-      });
-    }
-    el.addEventListener("pointerenter",function(){el.style.transition="transform .16s cubic-bezier(.22,1,.36,1),border-color .2s,background .25s,box-shadow .3s";});
-    el.addEventListener("pointermove",onMove);
-    el.addEventListener("pointerleave",function(){
-      if(raf){cancelAnimationFrame(raf);raf=null;}
-      el.style.transform="";
-      setTimeout(function(){el.style.transition="";},220);
-    });
-  });
-})();
-
 /* ── GitHub language bars on repo cards ── */
 (function(){
   var fills={"gr-go":["#00ADD8",78],"gr-py":["#3572A5",84],"gr-ts":["#3178c6",72],"gr-ref":["#8a6a1d",90]};
@@ -2958,152 +2988,9 @@ var REDUCE=window.matchMedia&&window.matchMedia("(prefers-reduced-motion:reduce)
   });
 })();
 
-/* ── GitHub heatmap tooltip ── */
-(function(){
-  var grid=document.querySelector("#projects .gh-grid");
-  if(!grid)return;
-  var tip=document.createElement("div");tip.className="gh-tip";document.body.appendChild(tip);
-  var cells=[].slice.call(grid.children);
-  grid.addEventListener("mousemove",function(e){
-    var c=e.target.closest(".gh-c");
-    if(!c){tip.style.opacity=0;return;}
-    var l=+c.getAttribute("data-l")||0;
-    var i=cells.indexOf(c);
-    var n=l===0?0:l*3+(i%3)-1;
-    tip.innerHTML=(n<=0?"No contributions":"<b>"+n+" contribution"+(n>1?"s":"")+"</b>")
-      +" <span style='opacity:.65'>· week "+(Math.floor(i/7)+1)+"</span>";
-    tip.style.left=e.clientX+"px";tip.style.top=e.clientY+"px";tip.style.opacity=1;
-  });
-  grid.addEventListener("mouseleave",function(){tip.style.opacity=0;});
-})();
 
-/* ── 3D hero: kubernetes-style node constellation (lazy three.js) ── */
-(function(){
-  if(REDUCE||window.innerWidth<901)return;
-  var host=document.getElementById("hero3d");
-  if(!host)return;
-  var started=false;
-  function boot(){
-    if(started)return;started=true;
-    import("https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js").then(init).catch(function(){});
-  }
-  function idle(){(window.requestIdleCallback||function(f){setTimeout(f,800);})(boot);}
-  if(document.readyState==="complete")idle();else addEventListener("load",idle);
 
-  function init(THREE){
-    var sec=document.getElementById("home");
-    var w=host.clientWidth,h=host.clientHeight;
-    if(!w||!h)return;
-    var renderer;
-    try{renderer=new THREE.WebGLRenderer({alpha:true,antialias:true,powerPreference:"low-power"});}
-    catch(e){return;}
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
-    renderer.setSize(w,h);
-    host.appendChild(renderer.domElement);
 
-    var scene=new THREE.Scene();
-    var cam=new THREE.PerspectiveCamera(38,w/h,.1,100);
-    cam.position.set(0,0,16);
-
-    scene.add(new THREE.AmbientLight(0xfff6e8,1.15));
-    var key=new THREE.DirectionalLight(0xffffff,1.25);key.position.set(6,9,10);scene.add(key);
-    var rim=new THREE.DirectionalLight(0x326CE5,.55);rim.position.set(-8,-4,6);scene.add(rim);
-
-    var BASE_X=-2.95,BASE_Y=2.05;
-    var group=new THREE.Group();
-    group.position.set(BASE_X,BASE_Y,0);
-    group.scale.setScalar(.48);
-    scene.add(group);
-
-    /* polished core: faceted k8s-blue icosahedron with crisp white edges + geodesic shell */
-    var core=new THREE.Mesh(
-      new THREE.IcosahedronGeometry(1.9,0),
-      new THREE.MeshStandardMaterial({color:0x326CE5,metalness:.35,roughness:.22,emissive:0x16306e,emissiveIntensity:.3,transparent:true,opacity:.97,flatShading:true})
-    );
-    core.add(new THREE.LineSegments(
-      new THREE.EdgesGeometry(new THREE.IcosahedronGeometry(1.905,0)),
-      new THREE.LineBasicMaterial({color:0xffffff,transparent:true,opacity:.45})
-    ));
-    var shell=new THREE.LineSegments(
-      new THREE.EdgesGeometry(new THREE.IcosahedronGeometry(2.8,1)),
-      new THREE.LineBasicMaterial({color:0x1e1b16,transparent:true,opacity:.11})
-    );
-    group.add(core,shell);
-
-    /* three tilted orbital rings — service nodes travel along their orbits */
-    var palette=[0x326CE5,0xEF7B4D,0xF46800,0x3f8f5b,0x7B42BC,0x2496ED,0xbf4527];
-    var ringDefs=[
-      {r:4.0,tilt:[.52,.18,0],n:5,speed:.17},
-      {r:5.2,tilt:[-.42,.65,.2],n:6,speed:-.12},
-      {r:6.4,tilt:[.95,-.5,-.15],n:5,speed:.09}
-    ];
-    var orbits=[],ci=0;
-    ringDefs.forEach(function(def){
-      var ring=new THREE.Group();
-      ring.rotation.set(def.tilt[0],def.tilt[1],def.tilt[2]);
-      group.add(ring);
-      var pts=[];
-      for(var a=0;a<=128;a++){var ang=a/128*Math.PI*2;pts.push(new THREE.Vector3(Math.cos(ang)*def.r,0,Math.sin(ang)*def.r));}
-      ring.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),
-        new THREE.LineBasicMaterial({color:0x1e1b16,transparent:true,opacity:.16})));
-      for(var j=0;j<def.n;j++){
-        var col=palette[ci%palette.length];ci++;
-        var isOct=ci%4===0;
-        var m=new THREE.Mesh(
-          isOct?new THREE.OctahedronGeometry(.3,0):new THREE.SphereGeometry(.17,18,18),
-          new THREE.MeshStandardMaterial({color:col,metalness:.3,roughness:.25,emissive:col,emissiveIntensity:.14,flatShading:isOct})
-        );
-        ring.add(m);
-        var lg=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,0,0),new THREE.Vector3(def.r,0,0)]);
-        var ln=new THREE.Line(lg,new THREE.LineBasicMaterial({color:0x1e1b16,transparent:true,opacity:.1}));
-        ring.add(ln);
-        orbits.push({m:m,ln:ln,r:def.r,a:j/def.n*Math.PI*2,speed:def.speed,wob:Math.random()*Math.PI*2});
-      }
-    });
-
-    var tx=0,ty=0,mx=0,my=0;
-    addEventListener("pointermove",function(e){
-      tx=(e.clientX/innerWidth-.5);ty=(e.clientY/innerHeight-.5);
-    },{passive:true});
-
-    var playing=true,shown=false,spin=0;
-    if("IntersectionObserver" in window){
-      new IntersectionObserver(function(es){es.forEach(function(e){playing=e.isIntersecting;});}).observe(sec);
-    }
-    document.addEventListener("visibilitychange",function(){if(document.hidden)playing=false;else{var r=sec.getBoundingClientRect();playing=r.bottom>0&&r.top<innerHeight;}});
-
-    addEventListener("resize",function(){
-      var nw=host.clientWidth,nh=host.clientHeight;
-      if(!nw||!nh)return;
-      cam.aspect=nw/nh;cam.updateProjectionMatrix();renderer.setSize(nw,nh);
-    });
-
-    var clock=new THREE.Clock();
-    (function loop(){
-      requestAnimationFrame(loop);
-      if(!playing)return;
-      var dt=Math.min(clock.getDelta(),.05),t=clock.elapsedTime;
-      spin+=dt*.07;
-      mx+=(tx-mx)*.04;my+=(ty-my)*.04;
-      group.rotation.y=spin+mx*.55;
-      group.rotation.x=my*.3;
-      group.position.y=BASE_Y+Math.sin(t*.45)*.14;
-      core.rotation.y+=dt*.18;core.rotation.x+=dt*.07;
-      shell.rotation.y-=dt*.06;
-      for(var i=0;i<orbits.length;i++){
-        var o=orbits[i];
-        o.a+=dt*o.speed;
-        o.m.position.set(Math.cos(o.a)*o.r,Math.sin(t*.7+o.wob)*.12,Math.sin(o.a)*o.r);
-        o.m.rotation.y+=dt*.5;
-        var pa=o.ln.geometry.attributes.position;
-        pa.setXYZ(1,o.m.position.x,o.m.position.y,o.m.position.z);
-        pa.needsUpdate=true;
-      }
-      renderer.render(scene,cam);
-      if(!shown){shown=true;host.classList.add("on");}
-    })();
-  }
-})();
 })();
 </script>
 </body>

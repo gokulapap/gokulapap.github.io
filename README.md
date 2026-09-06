@@ -26,6 +26,7 @@ DevOps tool's UI:
 |---|---|
 | `index.html` | The entire site (HTML + CSS + JS). |
 | `gokul.jpg` | Profile photo (rendered B&W in-page). |
+| `og-portfolio.png` | Approved artwork for social link previews. |
 | `CNAME` | Custom domain → `gokulap.me`. |
 | `.nojekyll` | Tells GitHub Pages to serve files as-is. |
 
@@ -37,6 +38,15 @@ configured in Settings (the `CNAME` file is a backup).
 
 ## Editing
 
-All external links (email, GitHub, LinkedIn, X, résumé, DevOps CTF, project repos) live
-in the `LINKS = { … }` object near the bottom of `index.html`. Section content is plain
-HTML inside the relevant `<section>`.
+Section content is plain HTML inside the relevant `<section>`. Your name, current
+role, employer, and location appear directly in the opening section.
+
+External links have real `href` values so they also work without JavaScript. When
+changing a destination, update its HTML links and the matching entry in the
+`LINKS = { … }` object near the bottom of `index.html`.
+
+The original blueprint layout includes subtle section reveals and a desktop scroll
+progress rail. Reduced-motion preferences are respected, and all content and
+navigation remain available without JavaScript. No 3D renderer or build tools are required.
+
+Preview locally with `python3 -m http.server 8000`, then open `http://localhost:8000`.
